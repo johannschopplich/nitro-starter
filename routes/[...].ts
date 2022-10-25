@@ -8,14 +8,13 @@ export default defineEventHandler(() => {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/favicon.svg" />
-  <title>Nitro Test Deployment</title>
-  <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+  <title>Nitro Starter</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
 </head>
 
 <body>
   <header>
-    <h1>🐣 Nitro Test Deployment </h1>
+    <h1>🐣 Nitro Starter</h1>
   </header>
   <main>
     <h2>Endpoints</h2>
