@@ -1,12 +1,5 @@
-[dev]
-  command = "sleep 999999999"
-  framework = "#custom"
-  functions = ".output/server"
-  port = 8888
-  targetPort = 3000
-
 [build]
-  command = "yarn build"
+  command = "pnpm run build"
   publish = "dist"
   functions = ".output/server"
 

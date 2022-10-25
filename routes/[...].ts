@@ -1,7 +1,5 @@
 export default defineEventHandler(() => {
-  const links = [
-    '/api/hello'
-  ]
+  const links = ['/api/hello']
   return `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -18,7 +16,9 @@ export default defineEventHandler(() => {
           </header>
           <div>
             <ul>
-        ${links.map(link => `        <li><a href="${link}">${link}</a></li>`).join('\n')}
+        ${links
+          .map((link) => `        <li><a href="${link}">${link}</a></li>`)
+          .join('\n')}
             </ul>
           </div>
           <footer>

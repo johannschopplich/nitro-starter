@@ -1,19 +1,33 @@
 {
   "private": true,
-  "scripts": {
-    "build": "nitro build",
-    "dev": "nitro dev",
-    "lint": "eslint --ext .ts .",
-    "start": "node .output/server/index.mjs",
-    "test": "node test/api.test.mjs"
-  },
-  "devDependencies": {
-    "@actions/core": "^1.10.0",
-    "firebase-admin": "^10.3.0",
-    "firebase-functions": "^3.24.1",
-    "nitropack": "^0.6.0"
-  },
+  "packageManager": "pnpm@7.14.0",
   "engines": {
     "node": "14.x || >=16.x"
+  },
+  "scripts": {
+    "dev": "nitro dev",
+    "build": "nitro build",
+    "preview": "node .output/server/index.mjs",
+    "lint": "eslint \"**/*.ts\" --ignore-path .gitignore",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier \"**/*.{css,html,json,md,ts,tsx,yml}\" --write --ignore-path .gitignore",
+    "postinstall": "simple-git-hooks"
+  },
+  "lint-staged": {
+    "**/*.{ts,vue}": "eslint --cache --ignore-path .gitignore"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "lint-staged": "^13.0.3",
+    "nitropack": "^0.6.0",
+    "prettier": "^2.7.1",
+    "simple-git-hooks": "^2.8.1",
+    "typescript": "^4.8.4"
   }
 }
