@@ -14,7 +14,7 @@
     "postinstall": "simple-git-hooks"
   },
   "lint-staged": {
-    "**/*.{ts,vue}": "eslint --cache --ignore-path .gitignore"
+    "**/*.ts": "eslint --cache --ignore-path .gitignore"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"
