@@ -4,7 +4,7 @@ import { setupNitro } from './utils'
 describe('handle route rules', async () => {
   const { callHandler } = await setupNitro()
 
-  it('cors', async () => {
+  it('supports cors', async () => {
     const expectedHeaders = {
       'access-control-allow-origin': '*',
       'access-control-allowed-methods': 'GET',
@@ -15,7 +15,7 @@ describe('handle route rules', async () => {
     expect(headers).toMatchObject(expectedHeaders)
   })
 
-  it('redirects', async () => {
+  it('supports redirects', async () => {
     const base = await callHandler({ url: '/rules/redirect' })
     expect(base.status).toBe(307)
     expect(base.headers.location).toBe('/base')
@@ -25,20 +25,9 @@ describe('handle route rules', async () => {
     expect(obj.headers.location).toBe('https://nitro.unjs.io/')
   })
 
-  it('headers', async () => {
+  it('supports headers', async () => {
     const { headers } = await callHandler({ url: '/rules/headers' })
     expect(headers['cache-control']).toBe('s-maxage=60')
-  })
-
-  it('cors', async () => {
-    const expectedHeaders = {
-      'access-control-allow-origin': '*',
-      'access-control-allowed-methods': 'GET',
-      'access-control-allow-headers': '*',
-      'access-control-max-age': '0',
-    }
-    const { headers } = await callHandler({ url: '/rules/cors' })
-    expect(headers).toMatchObject(expectedHeaders)
   })
 
   it('allowing overriding', async () => {

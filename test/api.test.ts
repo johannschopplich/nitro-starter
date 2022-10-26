@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import { setupNitro } from './utils'
 
-describe('API', async () => {
+describe('handle API routes', async () => {
   const { callHandler } = await setupNitro()
 
-  it('fetches data from /hello', async () => {
+  it('fetches plain data', async () => {
     const { data: helloData } = await callHandler({ url: '/api/hello' })
     expect(helloData).to.toMatchObject({ message: 'Hello API' })
   })

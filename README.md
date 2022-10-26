@@ -1,14 +1,28 @@
 # Nitro Starter
 
-> ℹ️ Starter kit for [⚗️ Nitro](https://nitro.unjs.io/), a tool that provides a powerful toolchain and a runtime framework from the [UnJS](https://github.com/unjs) ecosystem to build and deploy any JavaScript server, anywhere.
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/johannschopplich/nitro-starter)
 
-## 💻 Development
+> ℹ️ Starter kit for [⚗️ Nitro](https://nitro.unjs.io/) – a powerful toolchain and a runtime framework from the [UnJS](https://github.com/unjs) ecosystem to build and deploy any JavaScript server, anywhere.
 
-1. Clone this repository
-2. Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
-3. Install dependencies using `pnpm install`
-4. Run `pnpm run dev:prepare`
-5. Start development server using `pnpm run dev`
+It is highly recommended to read the [Nitro documentation](https://nitro.unjs.io/) when working with this template.
+
+## Key Features
+
+- 🎒 [Demo routes](./routes/api/) and [route rule examples](./nitro.config.ts)
+- ☑️ Full test coverage powered by [Vitest](https://vitest.dev/)
+- 🦺 ESLint & Prettier defaults
+
+## Usage
+
+### Prerequisites
+
+1. Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
+2. Install dependencies using `pnpm install`
+
+### Development
+
+1. Start the development server using `pnpm run dev`
+2. Visit [localhost:3000](http://localhost:3000/)
 
 ## License
 
