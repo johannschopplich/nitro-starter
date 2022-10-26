@@ -1,6 +1,4 @@
-import { createError } from 'h3'
-
-export default eventHandler(() => {
+export default defineEventHandler(() => {
   throw createError({
     statusCode: 503,
     statusMessage: 'Service Unavailable',
