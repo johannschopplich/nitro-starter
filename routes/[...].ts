@@ -1,5 +1,5 @@
 export default defineEventHandler(() => {
-  const links = ['/api/hello']
+  const links = ['/api/hello', '/api/wildcard/param', '/api/error']
 
   return `
 <!DOCTYPE html>
