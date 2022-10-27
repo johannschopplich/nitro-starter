@@ -4,7 +4,7 @@ import { callHandler } from './utils'
 describe('handle API routes', async () => {
   it('fetches plain data', async () => {
     const { data: helloData } = await callHandler({ url: '/api/hello' })
-    expect(helloData).to.toMatchObject({ message: 'Hello API' })
+    expect(helloData).toMatchObject({ message: 'Hello API' })
   })
 
   it('fetches wildcard data', async () => {
