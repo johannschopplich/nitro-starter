@@ -1,9 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { setupNitro } from './utils'
+import { callHandler } from './utils'
 
 describe('handle route rules', async () => {
-  const { callHandler } = await setupNitro()
-
   it('supports cors', async () => {
     const expectedHeaders = {
       'access-control-allow-origin': '*',
