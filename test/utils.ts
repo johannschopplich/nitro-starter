@@ -69,7 +69,7 @@ export async function callHandler(options: {
     joinURL(process.env.NITRO_SERVER_URL!, options.url.slice(1)),
     {
       redirect: 'manual',
-    }
+    },
   )
 
   return {
