@@ -1,5 +1,5 @@
 import { resolve } from 'pathe'
-import { joinURL } from 'ufo'
+import { joinURL, withoutLeadingSlash } from 'ufo'
 import destr from 'destr'
 import { listen } from 'listhen'
 import { fetch } from 'ohmyfetch'
@@ -64,11 +64,13 @@ export async function startServer(ctx: Context) {
 
 export async function callHandler(options: {
   url: string
+  headers?: Record<string, string>
 }): Promise<TestHandlerResult> {
   const result = await fetch(
-    joinURL(process.env.NITRO_SERVER_URL!, options.url.slice(1)),
+    joinURL(process.env.NITRO_SERVER_URL!, withoutLeadingSlash(options.url)),
     {
       redirect: 'manual',
+      headers: options.headers,
     },
   )
 

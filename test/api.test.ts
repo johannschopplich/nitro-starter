@@ -3,15 +3,15 @@ import { callHandler } from './utils'
 
 describe('handle API routes', async () => {
   it('fetches plain data', async () => {
-    const { data: helloData } = await callHandler({ url: '/api/hello' })
-    expect(helloData).toMatchObject({ message: 'Hello API' })
+    const { data } = await callHandler({ url: '/api/hello' })
+    expect(data).toMatchObject({ message: 'Hello API' })
   })
 
   it('fetches wildcard data', async () => {
-    const { data: paramsData2 } = await callHandler({
+    const { data } = await callHandler({
       url: '/api/wildcard/foo/bar/baz',
     })
-    expect(paramsData2).toBe('foo/bar/baz')
+    expect(data).toBe('foo/bar/baz')
   })
 
   it('handles errors', async () => {
