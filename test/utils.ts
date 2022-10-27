@@ -73,8 +73,8 @@ export async function callHandler(options: {
   )
 
   return {
-    data: destr(await (result as Response).text()),
+    data: destr(await result.text()),
     status: result.status,
-    headers: Object.fromEntries((result as Response).headers.entries()),
+    headers: Object.fromEntries(result.headers.entries()),
   }
 }
