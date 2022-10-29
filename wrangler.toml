@@ -1,0 +1,8 @@
+name = "nitro-starter"
+account_id = ""
+main = "./.output/server/index.mjs"
+workers_dev = true
+compatibility_date = "2022-04-07"
+
+[site]
+bucket = ".output/public"
