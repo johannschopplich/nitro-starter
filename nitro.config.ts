@@ -1,18 +1,21 @@
 import { defineNitroConfig } from 'nitropack'
 
 export default defineNitroConfig({
-  // Some test rules to show Nitro's route features
+  runtimeConfig: {
+    // Replace with allowed URLs in production
+    allowedOrigins: ['*'],
+  },
+
   routeRules: {
-    '/rules/headers': { headers: { 'cache-control': 's-maxage=60' } },
-    '/rules/cors': {
+    '/**': {
       cors: true,
-      headers: { 'access-control-allowed-methods': 'GET' },
+      headers: {
+        'access-control-allowed-methods': 'GET, POST, OPTIONS',
+      },
     },
     '/rules/redirect': { redirect: '/base' },
     '/rules/redirect/obj': {
-      redirect: { to: 'https://nitro.unjs.io/', statusCode: 308 },
+      redirect: { to: '/other', statusCode: 308 },
     },
-    '/rules/nested/**': { redirect: '/base', headers: { 'x-test': 'test' } },
-    '/rules/nested/override': { redirect: { to: '/other' } },
   },
 })

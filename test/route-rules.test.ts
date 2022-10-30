@@ -5,7 +5,7 @@ describe('handle route rules', async () => {
   it('supports cors', async () => {
     const expectedHeaders = {
       'access-control-allow-origin': '*',
-      'access-control-allowed-methods': 'GET',
+      'access-control-allowed-methods': 'GET, POST, OPTIONS',
       'access-control-allow-headers': '*',
       'access-control-max-age': '0',
     }
@@ -20,21 +20,6 @@ describe('handle route rules', async () => {
 
     const obj = await callHandler({ url: '/rules/redirect/obj' })
     expect(obj.status).toBe(308)
-    expect(obj.headers.location).toBe('https://nitro.unjs.io/')
-  })
-
-  it('supports headers', async () => {
-    const { headers } = await callHandler({ url: '/rules/headers' })
-    expect(headers['cache-control']).toBe('s-maxage=60')
-  })
-
-  it('allowing overriding', async () => {
-    const override = await callHandler({ url: '/rules/nested/override' })
-    expect(override.headers.location).toBe('/other')
-    expect(override.headers['x-test']).toBe('test')
-
-    const base = await callHandler({ url: '/rules/nested/base' })
-    expect(base.headers.location).toBe('/base')
-    expect(base.headers['x-test']).toBe('test')
+    expect(obj.headers.location).toBe('/other')
   })
 })
