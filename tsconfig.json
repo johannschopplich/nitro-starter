@@ -4,7 +4,9 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "paths": {
-      "#nitro": ["./node_modules/nitropack-edge/dist/runtime/index"]
+      "#internal/nitro": ["./node_modules/nitropack/dist/runtime/index"],
+      "#internal/nitro/*": ["./node_modules/nitropack/dist/runtime/*"],
+      "#nitro": ["./node_modules/nitropack/dist/runtime/index"]
     },
     "resolveJsonModule": true,
     "esModuleInterop": true,
