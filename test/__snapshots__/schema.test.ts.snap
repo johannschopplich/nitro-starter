@@ -1,0 +1,51 @@
+// Vitest Snapshot v1
+
+exports[`validate requests using zod schemas > event handler with schema > returns 200 if query/body matches validation schema 1`] = `
+{
+  "body": {
+    "required": true,
+  },
+  "query": {
+    "required": true,
+  },
+}
+`;
+
+exports[`validate requests using zod schemas > event handler with schema > throws 400 if query/body does not match validation schema 1`] = `
+{
+  "message": "{\\"errors\\":{\\"body\\":[{\\"code\\":\\"invalid_type\\",\\"expected\\":\\"object\\",\\"received\\":\\"undefined\\",\\"path\\":[],\\"message\\":\\"Required\\"}],\\"query\\":null}}",
+  "statusCode": 400,
+  "statusMessage": "{\\"errors\\":{\\"body\\":[{\\"code\\":\\"invalid_type\\",\\"expected\\":\\"object\\",\\"received\\":\\"undefined\\",\\"path\\":[],\\"message\\":\\"Required\\"}],\\"query\\":null}}",
+  "url": "/api/validate/handler?required=true",
+}
+`;
+
+exports[`validate requests using zod schemas > validate body > returns 200 if body matches validation schema 1`] = `
+{
+  "required": true,
+}
+`;
+
+exports[`validate requests using zod schemas > validate body > throws 400 if body does not match validation schema 1`] = `
+{
+  "message": "{\\"errors\\":[{\\"code\\":\\"invalid_type\\",\\"expected\\":\\"boolean\\",\\"received\\":\\"undefined\\",\\"path\\":[\\"required\\"],\\"message\\":\\"Required\\"}]}",
+  "statusCode": 400,
+  "statusMessage": "{\\"errors\\":[{\\"code\\":\\"invalid_type\\",\\"expected\\":\\"boolean\\",\\"received\\":\\"undefined\\",\\"path\\":[\\"required\\"],\\"message\\":\\"Required\\"}]}",
+  "url": "/api/validate/body",
+}
+`;
+
+exports[`validate requests using zod schemas > validate query > returns 200 if query matches validation schema 1`] = `
+{
+  "required": "",
+}
+`;
+
+exports[`validate requests using zod schemas > validate query > throws 400 if query does not match validation schema 1`] = `
+{
+  "message": "{\\"errors\\":[{\\"code\\":\\"invalid_type\\",\\"expected\\":\\"string\\",\\"received\\":\\"undefined\\",\\"path\\":[\\"required\\"],\\"message\\":\\"Required\\"}]}",
+  "statusCode": 400,
+  "statusMessage": "{\\"errors\\":[{\\"code\\":\\"invalid_type\\",\\"expected\\":\\"string\\",\\"received\\":\\"undefined\\",\\"path\\":[\\"required\\"],\\"message\\":\\"Required\\"}]}",
+  "url": "/api/validate/query",
+}
+`;

@@ -11,6 +11,7 @@ specifiers:
   simple-git-hooks: ^2.8.1
   typescript: ^4.8.4
   vitest: ^0.24.3
+  zod: ^3.19.1
 
 devDependencies:
   '@typescript-eslint/eslint-plugin': 5.41.0_huremdigmcnkianavgfk3x6iou
@@ -23,6 +24,7 @@ devDependencies:
   simple-git-hooks: 2.8.1
   typescript: 4.8.4
   vitest: 0.24.3
+  zod: 3.19.1
 
 packages:
 
@@ -3553,4 +3555,8 @@ packages:
       archiver-utils: 2.1.0
       compress-commons: 4.1.1
       readable-stream: 3.6.0
+    dev: true
+
+  /zod/3.19.1:
+    resolution: {integrity: sha512-LYjZsEDhCdYET9ikFu6dVPGp2YH9DegXjdJToSzD9rO6fy4qiRYFoyEYwps88OseJlPyl2NOe2iJuhEhL7IpEA==}
     dev: true

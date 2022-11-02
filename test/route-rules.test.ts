@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { callHandler } from './utils'
 
-describe('handle route rules', async () => {
+describe('route rules', () => {
   it('supports cors', async () => {
     const expectedHeaders = {
       'access-control-allow-origin': '*',
@@ -9,16 +9,16 @@ describe('handle route rules', async () => {
       'access-control-allow-headers': '*',
       'access-control-max-age': '0',
     }
-    const { headers } = await callHandler({ url: '/rules/cors' })
+    const { headers } = await callHandler('/rules/cors')
     expect(headers).toMatchObject(expectedHeaders)
   })
 
   it('supports redirects', async () => {
-    const base = await callHandler({ url: '/rules/redirect' })
+    const base = await callHandler('/rules/redirect')
     expect(base.status).toBe(307)
     expect(base.headers.location).toBe('/base')
 
-    const obj = await callHandler({ url: '/rules/redirect/obj' })
+    const obj = await callHandler('/rules/redirect/obj')
     expect(obj.status).toBe(308)
     expect(obj.headers.location).toBe('/other')
   })
