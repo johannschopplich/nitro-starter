@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.14.0",
+  "packageManager": "pnpm@7.14.2",
   "engines": {
     "node": "14.x || >=16.x"
   },
@@ -22,16 +22,16 @@
     "pre-commit": "pnpm exec lint-staged"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.41.0",
-    "@typescript-eslint/parser": "^5.41.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "lint-staged": "^13.0.3",
-    "nitropack": "^0.6.0",
+    "nitropack": "^0.6.1",
     "prettier": "^2.7.1",
     "simple-git-hooks": "^2.8.1",
     "typescript": "^4.8.4",
-    "vitest": "^0.24.3",
+    "vitest": "^0.24.5",
     "zod": "^3.19.1"
   }
 }
