@@ -24,14 +24,14 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
-    "eslint": "^8.26.0",
+    "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "lint-staged": "^13.0.3",
     "nitropack": "^0.6.1",
     "prettier": "^2.7.1",
     "simple-git-hooks": "^2.8.1",
     "typescript": "^4.8.4",
-    "vitest": "^0.24.5",
+    "vitest": "^0.25.0",
     "zod": "^3.19.1"
   }
 }
