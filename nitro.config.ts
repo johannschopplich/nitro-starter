@@ -2,7 +2,7 @@ import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'pathe'
 import { defineNitroConfig } from 'nitropack'
 
-const _dirname = dirname(fileURLToPath(import.meta.url))
+const currentDir = dirname(fileURLToPath(import.meta.url))
 
 export default defineNitroConfig({
   runtimeConfig: {
@@ -15,6 +15,7 @@ export default defineNitroConfig({
       cors: true,
       headers: {
         'access-control-allowed-methods': 'GET, POST, OPTIONS',
+        'access-control-max-age': '86400',
       },
     },
     '/rules/redirect': { redirect: '/base' },
@@ -26,7 +27,7 @@ export default defineNitroConfig({
   imports: {
     presets: [
       {
-        from: resolve(_dirname, 'utils/h3-zod'),
+        from: resolve(currentDir, 'utils/h3-zod'),
         imports: [
           'useValidatedQuery',
           'useValidatedBody',

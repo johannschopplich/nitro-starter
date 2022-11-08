@@ -7,7 +7,7 @@ describe('route rules', () => {
       'access-control-allow-origin': '*',
       'access-control-allowed-methods': 'GET, POST, OPTIONS',
       'access-control-allow-headers': '*',
-      'access-control-max-age': '0',
+      'access-control-max-age': '86400',
     }
     const { headers } = await callHandler('/rules/cors')
     expect(headers).toMatchObject(expectedHeaders)
