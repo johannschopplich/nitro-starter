@@ -21,12 +21,6 @@ interface Context {
   server?: Listener
 }
 
-interface TestHandlerResult {
-  data: any
-  status: number
-  headers: Record<string, string>
-}
-
 export async function setupContext({
   preset = 'node',
   rootDir = process.cwd(),
@@ -62,10 +56,7 @@ export async function startServer(ctx: Context) {
   }
 }
 
-export async function callHandler(
-  url: string,
-  init?: RequestInit,
-): Promise<TestHandlerResult> {
+export async function callHandler(url: string, init?: RequestInit) {
   const result = await fetch(joinURL(process.env.NITRO_SERVER_URL!, url), {
     ...init,
     redirect: 'manual',
