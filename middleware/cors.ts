@@ -12,9 +12,9 @@ export default defineEventHandler((event) => {
   setResponseHeader(event, 'access-control-allow-origin', origin || '*')
 
   if (isPreflight(event)) {
-    event.res.statusCode = 204
-    event.res.setHeader('content-length', '0')
-    event.res.end()
+    event.node.res.statusCode = 204
+    event.node.res.setHeader('content-length', '0')
+    event.node.res.end()
     return
   }
 })

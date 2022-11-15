@@ -2,7 +2,7 @@ import { resolve } from 'pathe'
 import { joinURL } from 'ufo'
 import destr from 'destr'
 import { listen } from 'listhen'
-import { fetch } from 'ohmyfetch'
+import { fetch } from 'ofetch'
 import {
   build,
   copyPublicAssets,

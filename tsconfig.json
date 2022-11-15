@@ -15,5 +15,5 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["**/*.ts", "./.nitro/types/nitro.d.ts"]
+  "include": ["./.nitro/types/nitro.d.ts", "**/*.ts"]
 }
