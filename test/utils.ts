@@ -13,8 +13,9 @@ import {
 import type { Listener } from 'listhen'
 import type { Nitro } from 'nitropack'
 
-interface Context {
+export interface Context {
   preset: string
+  isDev: boolean
   nitro?: Nitro
   rootDir: string
   outDir: string
@@ -27,6 +28,7 @@ export async function setupContext({
 } = {}) {
   const ctx: Context = {
     preset,
+    isDev: preset === 'nitro-dev',
     rootDir,
     outDir: resolve(rootDir, '.output'),
   }
@@ -34,14 +36,17 @@ export async function setupContext({
   const nitro = (ctx.nitro = await createNitro({
     preset: ctx.preset,
     rootDir: ctx.rootDir,
-    serveStatic: preset !== 'cloudflare' && preset !== 'vercel-edge',
+    serveStatic:
+      preset !== 'cloudflare' && preset !== 'vercel-edge' && !ctx.isDev,
     output: { dir: ctx.outDir },
   }))
 
-  await prepare(nitro)
-  await copyPublicAssets(nitro)
-  await prerender(nitro)
-  await build(nitro)
+  if (!ctx.isDev) {
+    await prepare(nitro)
+    await copyPublicAssets(nitro)
+    await prerender(nitro)
+    await build(nitro)
+  }
 
   return ctx
 }

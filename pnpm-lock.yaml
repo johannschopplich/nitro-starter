@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@typescript-eslint/eslint-plugin': ^5.43.0
   '@typescript-eslint/parser': ^5.43.0
+  dotenv: ^16.0.3
   eslint: ^8.27.0
   eslint-config-prettier: ^8.5.0
   lint-staged: ^13.0.3
@@ -16,6 +17,7 @@ specifiers:
 devDependencies:
   '@typescript-eslint/eslint-plugin': 5.43.0_wze2rj5tow7zwqpgbdx2buoy3m
   '@typescript-eslint/parser': 5.43.0_e3uo4sehh4zr4i6m57mkkxxv7y
+  dotenv: 16.0.3
   eslint: 8.27.0
   eslint-config-prettier: 8.5.0_eslint@8.27.0
   lint-staged: 13.0.3

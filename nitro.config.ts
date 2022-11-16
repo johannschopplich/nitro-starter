@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'pathe'
 import { defineNitroConfig } from 'nitropack'
