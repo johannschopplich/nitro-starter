@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.16.0",
+  "packageManager": "pnpm@7.16.1",
   "engines": {
     "node": "^18"
   },
@@ -19,7 +19,7 @@
     "**/*.ts": "eslint --cache --ignore-path .gitignore"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm exec lint-staged"
+    "pre-commit": "npx lint-staged"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.43.0",
