@@ -65,6 +65,11 @@ export async function callHandler(url: string, init?: RequestInit) {
   const result = await fetch(joinURL(process.env.NITRO_SERVER_URL!, url), {
     ...init,
     redirect: 'manual',
+    headers: {
+      // Enforce JSON response when routes fail
+      accept: 'application/json',
+      ...init?.headers,
+    },
   })
 
   return {
