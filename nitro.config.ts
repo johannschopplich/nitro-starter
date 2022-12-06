@@ -1,9 +1,5 @@
 import 'dotenv/config'
-import { fileURLToPath } from 'node:url'
-import { dirname, resolve } from 'pathe'
 import { defineNitroConfig } from 'nitropack'
-
-const currentDir = dirname(fileURLToPath(import.meta.url))
 
 export default defineNitroConfig({
   runtimeConfig: {
@@ -28,11 +24,14 @@ export default defineNitroConfig({
   imports: {
     presets: [
       {
-        from: resolve(currentDir, 'utils/h3-zod'),
+        from: 'h3-zod',
         imports: [
-          'useValidatedQuery',
+          'useSafeValidatedBody',
+          'useSafeValidatedParams',
+          'useSafeValidatedQuery',
           'useValidatedBody',
-          'defineEventHandlerWithSchema',
+          'useValidatedParams',
+          'useValidatedQuery',
         ],
       },
     ],

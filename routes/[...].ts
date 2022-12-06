@@ -2,8 +2,7 @@ export default defineEventHandler(() => {
   const links = [
     '/api/hello',
     '/api/validate/body',
-    '/api/validate/query',
-    '/api/wildcard/param',
+    '/api/validate/query?required=true',
     '/api/error',
   ]
 
