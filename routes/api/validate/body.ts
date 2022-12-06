@@ -1,10 +1,8 @@
 import { z } from 'zod'
 
-export default defineEventHandler((event) => {
-  const bodySchema = z.object({
+export default defineEventHandler(async (event) => {
+  return await useValidatedBody(event, {
     optional: z.string().optional(),
     required: z.boolean(),
   })
-
-  return useValidatedBody(event, bodySchema)
 })
