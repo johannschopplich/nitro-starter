@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.18.1",
+  "packageManager": "pnpm@7.18.2",
   "engines": {
     "node": "^18"
   },
@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier \"**/*.{css,html,json,md,ts,tsx,yml}\" --write --ignore-path .gitignore",
-    "postinstall": "simple-git-hooks"
+    "prepare": "simple-git-hooks"
   },
   "lint-staged": {
     "**/*.ts": "eslint --cache --ignore-path .gitignore"
@@ -29,10 +29,10 @@
     "h3-zod": "^0.3.10",
     "lint-staged": "^13.1.0",
     "nitropack": "^1.0.0",
-    "prettier": "^2.8.0",
+    "prettier": "^2.8.1",
     "simple-git-hooks": "^2.8.1",
-    "typescript": "^4.9.3",
-    "vitest": "^0.25.5",
-    "zod": "^3.19.1"
+    "typescript": "^4.9.4",
+    "vitest": "^0.25.8",
+    "zod": "^3.20.2"
   }
 }

@@ -16,7 +16,7 @@ It is highly recommended to read the [Nitro documentation](https://nitro.unjs.io
 
 ### Prerequisites
 
-1. Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable` (use `npm i -g corepack` for Node.js < 16.10)
+1. Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
 2. Install dependencies using `pnpm install`
 
 ### Development
