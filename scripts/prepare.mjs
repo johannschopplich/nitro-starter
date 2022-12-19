@@ -1,3 +1,4 @@
+// @ts-check
 import { createNitro, writeTypes } from 'nitropack'
 
 export async function prepare({ rootDir = process.cwd() } = {}) {
