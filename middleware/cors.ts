@@ -24,7 +24,7 @@ function isPreflight(event: H3Event) {
   const origin = getRequestHeader(event, 'origin')
   const accessControlRequestMethod = getRequestHeader(
     event,
-    'access-control-request-method',
+    'access-control-request-method'
   )
 
   return method === 'OPTIONS' && !!origin && !!accessControlRequestMethod
