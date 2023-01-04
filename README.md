@@ -26,4 +26,4 @@ It is highly recommended to read the [Nitro documentation](https://nitro.unjs.io
 
 ## License
 
-[MIT](./LICENSE) License © 2022 [Johann Schopplich](https://github.com/johannschopplich)
+[MIT](./LICENSE) License © 2022-2023 [Johann Schopplich](https://github.com/johannschopplich)
