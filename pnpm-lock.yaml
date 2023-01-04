@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@nuxt/eslint-config': ^0.1.1
-  dotenv: ^16.0.3
   eslint: ^8.31.0
   eslint-config-prettier: ^8.6.0
   h3-zod: ^0.3.10
@@ -16,7 +15,6 @@ specifiers:
 
 devDependencies:
   '@nuxt/eslint-config': 0.1.1_eslint@8.31.0
-  dotenv: 16.0.3
   eslint: 8.31.0
   eslint-config-prettier: 8.6.0_eslint@8.31.0
   h3-zod: 0.3.10_zod@3.20.2

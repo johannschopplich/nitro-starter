@@ -23,7 +23,6 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",
-    "dotenv": "^16.0.3",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
     "h3-zod": "^0.3.10",

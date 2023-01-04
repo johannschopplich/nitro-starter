@@ -1,4 +1,3 @@
-import 'dotenv/config'
 import { defineNitroConfig } from 'nitropack'
 
 export default defineNitroConfig({
