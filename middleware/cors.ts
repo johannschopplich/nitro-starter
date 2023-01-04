@@ -9,13 +9,11 @@ export default defineEventHandler((event) => {
     throw createError({ statusCode: 403, statusMessage: 'Origin not allowed' })
   }
 
-  setResponseHeader(event, 'access-control-allow-origin', origin || '*')
+  setResponseHeader(event, 'Access-Control-Allow-Origin', origin || '*')
 
+  // Handle preflight requests
   if (isPreflight(event)) {
-    event.node.res.statusCode = 204
-    event.node.res.setHeader('content-length', '0')
-    event.node.res.end()
-    return
+    return sendNoContent(event)
   }
 })
 
@@ -28,4 +26,11 @@ function isPreflight(event: H3Event) {
   )
 
   return method === 'OPTIONS' && !!origin && !!accessControlRequestMethod
+}
+
+function sendNoContent(event: H3Event) {
+  event.node.res.statusCode = 204
+  // 204 responses **must not** have a `Content-Length` header
+  // (https://www.rfc-editor.org/rfc/rfc7230#section-3.3.2)
+  event.node.res.end()
 }

@@ -7,11 +7,14 @@ export default defineNitroConfig({
   },
 
   routeRules: {
+    // Enable CORS for all routes
     '/**': {
-      cors: true,
       headers: {
-        'access-control-allowed-methods': 'GET, POST, OPTIONS',
-        'access-control-max-age': '86400',
+        // Allow header will be set by middleware if origin is allowed
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allowed-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Max-Age': '86400',
       },
     },
     '/rules/redirect': { redirect: '/base' },
