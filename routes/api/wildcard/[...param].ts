@@ -1,3 +1,4 @@
 export default defineEventHandler((event) => {
-  return event.context.params.param as string
+  const { param } = getRouterParams(event)
+  return param as string
 })
