@@ -2,7 +2,7 @@ export default defineEventHandler(() => {
   const links = [
     '/api/hello',
     '/api/validate/body',
-    '/api/validate/query?required=true',
+    '/api/validate/query?user=nitro',
     '/api/error',
   ]
 

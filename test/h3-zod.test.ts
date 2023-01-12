@@ -4,7 +4,9 @@ import { callHandler } from './utils'
 describe('validate requests using zod schemas', () => {
   describe('validate query', () => {
     it('returns 200 if query matches validation schema', async () => {
-      const { data, status } = await callHandler('/api/validate/query?required')
+      const { data, status } = await callHandler(
+        '/api/validate/query?user=nitro'
+      )
 
       expect(status).toBe(200)
       expect(data).toMatchSnapshot()

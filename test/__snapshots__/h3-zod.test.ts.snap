@@ -17,7 +17,7 @@ exports[`validate requests using zod schemas > validate body > throws 400 if bod
 
 exports[`validate requests using zod schemas > validate query > returns 200 if query matches validation schema 1`] = `
 {
-  "required": "",
+  "user": "nitro",
 }
 `;
 
