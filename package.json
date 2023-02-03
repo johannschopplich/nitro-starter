@@ -9,6 +9,7 @@
     "build": "nitro build",
     "preview": "node .output/server/index.mjs",
     "test": "vitest",
+    "test:run": "vitest --run --no-threads",
     "test:types": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

@@ -17,7 +17,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18
 
       - run: corepack enable
 
@@ -34,7 +34,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18
 
       - run: corepack enable
 
@@ -42,4 +42,4 @@ jobs:
         run: pnpm i
 
       - name: Test
-        run: npx vitest run
+        run: pnpm run test:run
