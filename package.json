@@ -14,7 +14,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier \"**/*.{css,html,json,md,ts,tsx,yml}\" --write --ignore-path .gitignore",
-    "prepare": "simple-git-hooks && node scripts/prepare.mjs"
+    "prepare": "simple-git-hooks && nitro prepare"
   },
   "lint-staged": {
     "**/*.ts": "eslint --cache --ignore-path .gitignore"
