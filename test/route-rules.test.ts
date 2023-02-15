@@ -5,7 +5,7 @@ describe('route rules', () => {
   it('supports cors', async () => {
     const expectedHeaders = {
       'access-control-allow-origin': '*',
-      'access-control-allowed-methods': 'GET, POST, OPTIONS',
+      'access-control-allow-methods': 'GET, POST, OPTIONS',
       'access-control-allow-headers': '*',
       'access-control-max-age': '86400',
     }
