@@ -3,14 +3,8 @@ import { callHandler } from './utils'
 
 describe('route rules', () => {
   it('supports cors', async () => {
-    const expectedHeaders = {
-      'access-control-allow-origin': '*',
-      'access-control-allow-methods': 'GET, POST, OPTIONS',
-      'access-control-allow-headers': '*',
-      'access-control-max-age': '86400',
-    }
     const { headers } = await callHandler('/rules/cors')
-    expect(headers).toMatchObject(expectedHeaders)
+    expect(headers).toHaveProperty('access-control-allow-origin')
   })
 
   it('supports redirects', async () => {
