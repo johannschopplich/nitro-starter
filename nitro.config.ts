@@ -1,9 +1,11 @@
 import { defineNitroConfig } from 'nitropack'
+import nitroPkg from 'nitropack/package.json'
 
 export default defineNitroConfig({
   runtimeConfig: {
     // Replace with allowed URLs in production
     allowedOrigins: ['*'],
+    nitroVersion: nitroPkg.version,
   },
 
   routeRules: {
