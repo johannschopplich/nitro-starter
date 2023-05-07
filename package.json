@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@8.1.0",
+  "packageManager": "pnpm@8.4.0",
   "engines": {
     "node": "^18"
   },
@@ -24,15 +24,15 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",
-    "eslint": "^8.37.0",
+    "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
-    "h3-zod": "^0.4.2",
-    "lint-staged": "^13.2.0",
-    "nitropack": "^2.3.2",
-    "prettier": "^2.8.7",
+    "h3-zod": "^0.5.1",
+    "lint-staged": "^13.2.2",
+    "nitropack": "^2.4.0",
+    "prettier": "^2.8.8",
     "simple-git-hooks": "^2.8.1",
-    "typescript": "^5.0.2",
-    "vitest": "^0.29.8",
+    "typescript": "^5.0.4",
+    "vitest": "^0.31.0",
     "zod": "^3.21.4"
   }
 }

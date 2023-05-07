@@ -1,5 +1,5 @@
-import { defineNitroConfig } from 'nitropack'
-import nitroPkg from 'nitropack/package.json'
+import { defineNitroConfig } from 'nitropack/config'
+import nitroPkg from './node_modules/nitropack/package.json'
 
 export default defineNitroConfig({
   runtimeConfig: {
@@ -29,5 +29,9 @@ export default defineNitroConfig({
         ],
       },
     ],
+  },
+
+  experimental: {
+    // openAPI: true,
   },
 })
