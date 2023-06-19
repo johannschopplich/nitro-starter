@@ -5,6 +5,8 @@
     "module": "ESNext",
     "paths": {
       "~/*": ["./*"],
+      "#internal/nitro": ["./node_modules/nitropack/dist/runtime/index"],
+      "#internal/nitro/*": ["./node_modules/nitropack/dist/runtime/*"],
       "#nitro": ["./node_modules/nitropack/dist/runtime/index"]
     },
     "skipLibCheck": true,
