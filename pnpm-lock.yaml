@@ -21,8 +21,8 @@ devDependencies:
     specifier: ^13.2.2
     version: 13.2.2
   nitropack:
-    specifier: ^2.5.0
-    version: 2.5.0
+    specifier: ^2.5.1
+    version: 2.5.1
   prettier:
     specifier: ^2.8.8
     version: 2.8.8
@@ -2750,8 +2750,8 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
-  /nitropack@2.5.0:
-    resolution: {integrity: sha512-uuQZZ7xaE4YYJBZjwN7Bj7pFbD6dwEN/4qxmb+gKdKGsc8VPY4Up9WHIp9/fb7Lh7S0k3GBSaeAcKTaIsrgRQg==}
+  /nitropack@2.5.1:
+    resolution: {integrity: sha512-RKq++lLrs7m/hlkEkYezL119Lu7LzseaDh/6UzmXqYD8/fx896Bou4CJpe775iHiHDzASiCmVKtlkBJxSiRi5w==}
     engines: {node: ^14.16.0 || ^16.11.0 || >=17.0.0}
     hasBin: true
     dependencies:

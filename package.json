@@ -28,7 +28,7 @@
     "eslint-config-prettier": "^8.8.0",
     "h3-zod": "^0.5.1",
     "lint-staged": "^13.2.2",
-    "nitropack": "^2.5.0",
+    "nitropack": "^2.5.1",
     "prettier": "^2.8.8",
     "simple-git-hooks": "^2.8.1",
     "typescript": "^5.1.3",
