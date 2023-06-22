@@ -30,15 +30,18 @@ const errorHandler: NitroErrorHandler = function (error, event) {
   setResponseStatus(event, statusCode, statusMessage)
   setResponseHeader(event, 'Content-Type', 'application/json')
 
-  event.node.res.end(
-    JSON.stringify({
-      url,
-      statusCode,
-      statusMessage,
-      message,
-      stack: isDev && statusCode !== 404 ? stack.map((i) => i.text) : undefined,
-    })
-  )
+  if (!event.handled) {
+    event.node.res.end(
+      JSON.stringify({
+        url,
+        statusCode,
+        statusMessage,
+        message,
+        stack:
+          isDev && statusCode !== 404 ? stack.map((i) => i.text) : undefined,
+      })
+    )
+  }
 }
 
 export default errorHandler

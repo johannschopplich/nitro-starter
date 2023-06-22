@@ -5,6 +5,7 @@
     "module": "ESNext",
     "paths": {
       "~/*": ["./*"],
+      "#imports": ["./.nitro/types/nitro-imports"],
       "#internal/nitro": ["./node_modules/nitropack/dist/runtime/index"],
       "#internal/nitro/*": ["./node_modules/nitropack/dist/runtime/*"],
       "#nitro": ["./node_modules/nitropack/dist/runtime/index"]
