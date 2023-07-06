@@ -7,7 +7,7 @@ export default defineEventHandler(() => {
   ]
 
   return html`
-    <!DOCTYPE html>
+    <!doctype html>
     <html lang="en">
       <head>
         <meta charset="utf-8" />
@@ -58,7 +58,7 @@ export default defineEventHandler(() => {
           document.querySelector('#perf').innerHTML = Object.entries(measures)
             .map(
               ([name, value]) =>
-                '<tr><td>' + name + '</td><td>' + value + 'ms</td></tr>'
+                '<tr><td>' + name + '</td><td>' + value + 'ms</td></tr>',
             )
             .join('')
         </script>

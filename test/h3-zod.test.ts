@@ -5,7 +5,7 @@ describe('validate requests using zod schemas', () => {
   describe('validate query', () => {
     it('returns 200 if query matches validation schema', async () => {
       const { data, status } = await callHandler(
-        '/api/validate/query?user=nitro'
+        '/api/validate/query?user=nitro',
       )
 
       expect(status).toBe(200)

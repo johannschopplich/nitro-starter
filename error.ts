@@ -23,7 +23,7 @@ const errorHandler: NitroErrorHandler = function (error, event) {
 
     console.error(
       tags,
-      error.message + '\n' + stack.map((l) => '  ' + l.text).join('  \n')
+      error.message + '\n' + stack.map((l) => '  ' + l.text).join('  \n'),
     )
   }
 
@@ -39,7 +39,7 @@ const errorHandler: NitroErrorHandler = function (error, event) {
         message,
         stack:
           isDev && statusCode !== 404 ? stack.map((i) => i.text) : undefined,
-      })
+      }),
     )
   }
 }
