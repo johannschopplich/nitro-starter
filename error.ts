@@ -8,7 +8,7 @@ const isDev = process.env.NODE_ENV === 'development'
 
 const errorHandler: NitroErrorHandler = function (error, event) {
   const { stack, statusCode, statusMessage, message } = normalizeError(error)
-  const url = event.node.req.url || ''
+  const url = getRequestPath(event)
 
   // Console output
   if (error.unhandled || error.fatal) {
@@ -31,7 +31,8 @@ const errorHandler: NitroErrorHandler = function (error, event) {
   setResponseHeader(event, 'Content-Type', 'application/json')
 
   if (!event.handled) {
-    event.node.res.end(
+    send(
+      event,
       JSON.stringify({
         url,
         statusCode,
