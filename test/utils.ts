@@ -6,6 +6,7 @@ import { fetch } from 'ofetch'
 import {
   build,
   copyPublicAssets,
+  createDevServer,
   createNitro,
   prepare,
   prerender,
@@ -15,17 +16,16 @@ import type { Nitro } from 'nitropack'
 
 export interface Context {
   preset: string
-  isDev: boolean
   nitro?: Nitro
   rootDir: string
   outDir: string
   server?: Listener
+  isDev: boolean
 }
 
-export async function setupContext({
-  preset = 'node',
-  rootDir = process.cwd(),
-} = {}) {
+const rootDir = new URL('../', import.meta.url).pathname
+
+export async function setupContext({ preset = 'node' } = {}) {
   const ctx: Context = {
     preset,
     isDev: preset === 'nitro-dev',
@@ -35,13 +35,36 @@ export async function setupContext({
 
   const nitro = (ctx.nitro = await createNitro({
     preset: ctx.preset,
+    dev: ctx.isDev,
     rootDir: ctx.rootDir,
+    buildDir: resolve(ctx.outDir, '.nitro'),
     serveStatic:
-      preset !== 'cloudflare' && preset !== 'vercel-edge' && !ctx.isDev,
-    output: { dir: ctx.outDir },
+      preset !== 'cloudflare' &&
+      preset !== 'cloudflare-module' &&
+      preset !== 'cloudflare-pages' &&
+      preset !== 'vercel-edge' &&
+      !ctx.isDev,
+    output: {
+      dir: ctx.outDir,
+    },
+    timing:
+      preset !== 'cloudflare' &&
+      preset !== 'cloudflare-pages' &&
+      preset !== 'vercel-edge',
   }))
 
-  if (!ctx.isDev) {
+  if (ctx.isDev) {
+    // Setup development server
+    const devServer = createDevServer(ctx.nitro)
+    ctx.server = await devServer.listen({})
+    await prepare(ctx.nitro)
+    const ready = new Promise<void>((resolve) => {
+      ctx.nitro!.hooks.hook('dev:reload', () => resolve())
+    })
+    await build(ctx.nitro)
+    await ready
+  } else {
+    // Production build
     await prepare(nitro)
     await copyPublicAssets(nitro)
     await prerender(nitro)
@@ -52,8 +75,10 @@ export async function setupContext({
 }
 
 export async function startServer(ctx: Context) {
-  const { listener } = await import(resolve(ctx.outDir, 'server/index.mjs'))
+  const entryPath = resolve(ctx.outDir, 'server/index.mjs')
+  const { listener } = await import(entryPath)
   ctx.server = await listen(listener)
+  console.log('>', ctx.server!.url)
 
   return async function () {
     if (ctx.server) await ctx.server.close()
@@ -72,9 +97,25 @@ export async function callHandler(url: string, init?: RequestInit) {
     },
   })
 
+  const headers: Record<string, string | string[]> = {}
+  for (const [key, value] of (result as Response).headers.entries()) {
+    if (headers[key]) {
+      if (!Array.isArray(headers[key])) {
+        headers[key] = [headers[key] as string]
+      }
+      if (Array.isArray(value)) {
+        ;(headers[key] as string[]).push(...value)
+      } else {
+        ;(headers[key] as string[]).push(value)
+      }
+    } else {
+      headers[key] = value
+    }
+  }
+
   return {
     data: destr(await result.text()),
     status: result.status,
-    headers: Object.fromEntries(result.headers.entries()),
+    headers,
   }
 }

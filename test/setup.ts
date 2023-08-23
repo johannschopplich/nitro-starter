@@ -3,6 +3,7 @@ import { setupContext, startServer } from './utils'
 // Setup shared Nitro instance
 // See https://vitest.dev/config/#globalsetup
 export default async function () {
+  // Build Nitro
   const ctx = await setupContext()
 
   // Start the server before all tests

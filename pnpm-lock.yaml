@@ -14,9 +14,6 @@ devDependencies:
   eslint-config-prettier:
     specifier: ^9.0.0
     version: 9.0.0(eslint@8.47.0)
-  h3-zod:
-    specifier: ^0.5.1
-    version: 0.5.1(h3@1.8.0)(zod@3.22.2)
   lint-staged:
     specifier: ^14.0.1
     version: 14.0.1
@@ -706,6 +703,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -2253,16 +2251,6 @@ packages:
       duplexer: 0.1.2
     dev: true
 
-  /h3-zod@0.5.1(h3@1.8.0)(zod@3.22.2):
-    resolution: {integrity: sha512-hltUPbYv7XYAzZJIvA2lTfRBO9QyDXhALmalfRaVdjSeuCV4vLi7hULaA+n+orGR68rRLFZ2Gc9hbfQ756GZpg==}
-    peerDependencies:
-      h3: ^1.6.0
-      zod: ^3.21.0
-    dependencies:
-      h3: 1.8.0
-      zod: 3.22.2
-    dev: true
-
   /h3@1.8.0:
     resolution: {integrity: sha512-057VY83X7Tg5n4XU2GV9M3dsCWUU4jtw2Lc/r4GjAcf9Jb6GI1mD5F8TCQHUcvLMEgtx6lbfobOFu7Vdmejihg==}
     dependencies:
@@ -2814,6 +2802,10 @@ packages:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: true
+
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
     dev: true
 
   /natural-compare-lite@1.4.0:

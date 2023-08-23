@@ -17,20 +17,4 @@ export default defineNitroConfig({
       redirect: { to: '/other', statusCode: 308 },
     },
   },
-
-  imports: {
-    presets: [
-      {
-        from: 'h3-zod',
-        imports: [
-          'useSafeValidatedBody',
-          'useSafeValidatedParams',
-          'useSafeValidatedQuery',
-          'useValidatedBody',
-          'useValidatedParams',
-          'useValidatedQuery',
-        ],
-      },
-    ],
-  },
 })
