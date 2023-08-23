@@ -4,36 +4,28 @@ export default defineEventHandler((event) => {
   const encoder = new TextEncoder()
   const _html = html`
     <!doctype html>
-    <!doctype html>
     <html>
       <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <title>Nitro Streaming Demo</title>
-        <style>
-          body {
-            font-family: monospace;
-            color: #fff;
-            background: #333;
-            font-size: 1.5em;
-            padding: 5em;
-            justify-content: center;
-            flex-direction: column;
-          }
-          a {
-            color: #fff;
-          }
-        </style>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
+        />
       </head>
       <body>
-        <h1>Nitro Streaming Demo</h1>
-        <br />
-        <a
-          href="https://github.com/johannschopplich/nitro-starter/blob/main/routes/stream.ts"
-        >
-          Source Code</a
-        >
-        <br /><br />
-      <!-- </body> -->
+        <header>
+          <h1>Nitro Streaming Demo</h1>
+          <a
+            href="https://github.com/johannschopplich/nitro-starter/blob/main/routes/stream.ts"
+          >
+            Source Code</a
+          >
+        </header>
+        <main></main>
+      </body>
     </html>
   `.trimStart()
 
