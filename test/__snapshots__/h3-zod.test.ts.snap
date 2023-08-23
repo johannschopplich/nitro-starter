@@ -8,10 +8,8 @@ exports[`validate requests using zod schemas > validate body > returns 200 if bo
 
 exports[`validate requests using zod schemas > validate body > throws 400 if body does not match validation schema 1`] = `
 {
-  "message": "Error",
+  "stack": [],
   "statusCode": 400,
-  "statusMessage": "Bad Request",
-  "url": "/api/validate/body",
 }
 `;
 
@@ -23,9 +21,7 @@ exports[`validate requests using zod schemas > validate query > returns 200 if q
 
 exports[`validate requests using zod schemas > validate query > throws 400 if query does not match validation schema 1`] = `
 {
-  "message": "Error",
+  "stack": [],
   "statusCode": 400,
-  "statusMessage": "Bad Request",
-  "url": "/api/validate/query",
 }
 `;

@@ -25,6 +25,9 @@ describe('validate requests using zod schemas', () => {
       const { data, status } = await callHandler('/api/validate/body', {
         method: 'POST',
         body: JSON.stringify({ required: true }),
+        headers: {
+          'content-type': 'application/json',
+        },
       })
 
       expect(status).toBe(200)
@@ -35,6 +38,9 @@ describe('validate requests using zod schemas', () => {
       const { data, status } = await callHandler('/api/validate/body', {
         method: 'POST',
         body: JSON.stringify({}),
+        headers: {
+          'content-type': 'application/json',
+        },
       })
 
       expect(status).toBe(400)
