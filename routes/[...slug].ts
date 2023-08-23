@@ -1,5 +1,6 @@
 export default defineEventHandler(() => {
   const links = [
+    '/stream',
     '/api/hello',
     '/api/validate/body',
     '/api/validate/query?user=nitro',
