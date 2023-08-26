@@ -25,7 +25,7 @@ export default defineEventHandler((event) => {
           >
         </header>
         <main></main>
-      </body>
+      <!-- </body> -->
     </html>
   `.trimStart()
 
