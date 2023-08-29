@@ -97,25 +97,9 @@ export async function callHandler(url: string, init?: RequestInit) {
     },
   })
 
-  const headers: Record<string, string | string[]> = {}
-  for (const [key, value] of (result as Response).headers.entries()) {
-    if (headers[key]) {
-      if (!Array.isArray(headers[key])) {
-        headers[key] = [headers[key] as string]
-      }
-      if (Array.isArray(value)) {
-        ;(headers[key] as string[]).push(...value)
-      } else {
-        ;(headers[key] as string[]).push(value)
-      }
-    } else {
-      headers[key] = value
-    }
-  }
-
   return {
     data: destr(await result.text()),
     status: result.status,
-    headers,
+    headers: Object.fromEntries(result.headers.entries()),
   }
 }
