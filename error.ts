@@ -30,7 +30,7 @@ const errorHandler: NitroErrorHandler = function (error, event) {
   setResponseStatus(event, statusCode, statusMessage)
   setResponseHeader(event, 'Content-Type', 'application/json')
 
-  send(
+  return send(
     event,
     JSON.stringify({
       url,
