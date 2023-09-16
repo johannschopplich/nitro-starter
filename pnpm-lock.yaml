@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@byjohann/eslint-config':
-    specifier: ^0.1.2
-    version: 0.1.2(eslint@8.49.0)(typescript@5.2.2)
+    specifier: ^0.2.0
+    version: 0.2.0(eslint@8.49.0)(typescript@5.2.2)
   eslint:
     specifier: ^8.49.0
     version: 8.49.0
@@ -62,8 +62,8 @@ packages:
       js-tokens: 4.0.0
     dev: true
 
-  /@byjohann/eslint-config@0.1.2(eslint@8.49.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-cM3RaE2IactWb4BGuhtt4N2Ug0B7cus7V28w7BGU4q6dx14nHt3XilSRCP3fPPQj3qeBWle9JZwe/O8OS5dsbg==}
+  /@byjohann/eslint-config@0.2.0(eslint@8.49.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-/qyg+YLnrW5aDf/+hekHXvpGzK/2qhLYTITQc92DQnqypZHhOnLUIsF3pYr6r4EHk0PoY77KmX15vYLGLQyUtg==}
     peerDependencies:
       eslint: '*'
       typescript: '*'
