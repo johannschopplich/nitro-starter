@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 import { resolve } from 'pathe'
 import { joinURL } from 'ufo'
 import destr from 'destr'
@@ -23,7 +24,7 @@ export interface Context {
   isDev: boolean
 }
 
-const rootDir = new URL('../', import.meta.url).pathname
+const rootDir = fileURLToPath(new URL('../', import.meta.url))
 
 export async function setupContext({ preset = 'node' } = {}) {
   const ctx: Context = {
