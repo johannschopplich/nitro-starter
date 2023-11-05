@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.10.2",
   "engines": {
     "node": "^18"
   },
@@ -24,11 +24,12 @@
   },
   "devDependencies": {
     "@byjohann/eslint-config": "^0.3.0",
-    "eslint": "^8.51.0",
+    "eslint": "^8.53.0",
     "lint-staged": "^15.0.2",
-    "nitropack": "^2.7.0",
+    "nitropack": "^2.7.2",
     "prettier": "^3.0.3",
     "simple-git-hooks": "^2.9.0",
+    "telegraf": "^4.15.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.6",
     "zod": "^3.22.4"

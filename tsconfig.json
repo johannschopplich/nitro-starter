@@ -19,6 +19,9 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "noEmit": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
 
     /* Linting */
     "strict": true
