@@ -2,9 +2,9 @@
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/johannschopplich/nitro-starter)
 
-> ℹ️ Starter kit for [⚗️ Nitro](https://nitro.unjs.io/) – a powerful tool chain and a runtime framework from the [UnJS](https://github.com/unjs) ecosystem to build and deploy any JavaScript server, anywhere.
+Starter kit for [⚗️ Nitro](https://nitro.unjs.io) – a powerful tool chain and a runtime framework from the [UnJS](https://github.com/unjs) ecosystem to build and deploy any JavaScript server, anywhere.
 
-It is highly recommended reading the [Nitro documentation](https://nitro.unjs.io/) when working with this template.
+It is highly recommended reading the [Nitro documentation](https://nitro.unjs.io) when working with this template.
 
 ## Key Features
 
@@ -26,4 +26,4 @@ It is highly recommended reading the [Nitro documentation](https://nitro.unjs.io
 
 ## License
 
-[MIT](./LICENSE) License © 2022-2023 [Johann Schopplich](https://github.com/johannschopplich)
+[MIT](./LICENSE) License © 2022-PRESENT [Johann Schopplich](https://github.com/johannschopplich)
