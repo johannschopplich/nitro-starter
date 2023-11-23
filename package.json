@@ -28,7 +28,7 @@
     "@byjohann/eslint-config": "^0.3.0",
     "eslint": "^8.54.0",
     "lint-staged": "^15.1.0",
-    "nitropack": "^2.7.2",
+    "nitropack": "^2.8.0",
     "prettier": "^3.1.0",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.2.2",
