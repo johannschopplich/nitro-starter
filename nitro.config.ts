@@ -1,3 +1,4 @@
+// eslint-disable-next-line antfu/no-import-node-modules-by-path
 import nitroPkg from './node_modules/nitropack/package.json'
 
 export default defineNitroConfig({

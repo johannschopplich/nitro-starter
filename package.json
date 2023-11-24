@@ -2,7 +2,7 @@
   "name": "nitro-starter",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.10.5",
+  "packageManager": "pnpm@8.11.0",
   "engines": {
     "node": "^18"
   },
@@ -18,14 +18,8 @@
     "format": "prettier \"**/*.{css,html,json,md,ts,tsx,yml}\" --write",
     "prepare": "simple-git-hooks && nitro prepare"
   },
-  "lint-staged": {
-    "**/*.ts": "eslint --cache --ignore-path .gitignore"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx lint-staged"
-  },
   "devDependencies": {
-    "@byjohann/eslint-config": "^0.3.0",
+    "@antfu/eslint-config": "^2.1.0",
     "eslint": "^8.54.0",
     "lint-staged": "^15.1.0",
     "nitropack": "^2.8.0",
@@ -34,5 +28,11 @@
     "typescript": "^5.2.2",
     "vitest": "^0.34.6",
     "zod": "^3.22.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "**/*.ts": "eslint --cache"
   }
 }

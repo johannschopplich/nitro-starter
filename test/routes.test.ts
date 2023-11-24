@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { callHandler } from './utils'
 
+// eslint-disable-next-line test/prefer-lowercase-title
 describe('API routes', () => {
   it('returns JSON data', async () => {
     const { data } = await callHandler('/api/hello')

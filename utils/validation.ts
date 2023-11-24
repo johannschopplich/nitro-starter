@@ -14,8 +14,8 @@ type Schema<U extends UnknownKeysParam = any> =
 type ParsedData<T extends Schema | z.ZodRawShape> = T extends Schema
   ? z.output<T>
   : T extends z.ZodRawShape
-  ? z.output<z.ZodObject<T>>
-  : never
+    ? z.output<z.ZodObject<T>>
+    : never
 
 export function useValidatedQuery<T extends Schema | z.ZodRawShape>(
   event: H3Event,

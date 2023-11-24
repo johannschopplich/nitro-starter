@@ -79,6 +79,7 @@ export async function startServer(ctx: Context) {
   const entryPath = resolve(ctx.outDir, 'server/index.mjs')
   const { listener } = await import(entryPath)
   ctx.server = await listen(listener)
+  // eslint-disable-next-line no-console
   console.log('>', ctx.server!.url)
 
   return async function () {
