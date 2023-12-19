@@ -89,7 +89,9 @@ export async function startServer(ctx: Context) {
 }
 
 export async function callHandler(url: string, init?: RequestInit) {
-  const result = await fetch(joinURL(process.env.NITRO_SERVER_URL!, url), {
+  const { inject } = await import('vitest')
+  const serverUrl = inject('nitroServerUrl')
+  const result = await fetch(joinURL(serverUrl, url), {
     ...init,
     redirect: 'manual',
     headers: {
