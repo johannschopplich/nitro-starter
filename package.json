@@ -21,7 +21,10 @@
     "lint-staged": "^15.2.0",
     "nitropack": "^2.8.1",
     "prettier": "^3.1.1",
+    "shikiji": "^0.9.17",
+    "shikiji-twoslash": "^0.9.17",
     "simple-git-hooks": "^2.9.0",
+    "twoslash-cdn": "^0.0.2",
     "typescript": "^5.3.3",
     "vitest": "^1.1.0",
     "zod": "^3.22.4"
