@@ -20,18 +20,9 @@ devDependencies:
   prettier:
     specifier: ^3.1.1
     version: 3.1.1
-  shikiji:
-    specifier: ^0.9.17
-    version: 0.9.17
-  shikiji-twoslash:
-    specifier: ^0.9.17
-    version: 0.9.17(typescript@5.3.3)
   simple-git-hooks:
     specifier: ^2.9.0
     version: 2.9.0
-  twoslash-cdn:
-    specifier: ^0.0.2
-    version: 0.0.2
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
@@ -666,7 +657,6 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
-      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -1056,13 +1046,6 @@ packages:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
     dev: true
 
-  /@types/lz-string@1.5.0:
-    resolution: {integrity: sha512-s84fKOrzqqNCAPljhVyC5TjAo6BH4jKHw9NRNFNiRUY5QSgZCmVm5XILlWbisiKl+0OcS7eWihmKGS5akc2iQw==}
-    deprecated: This is a stub types definition. lz-string provides its own type definitions, so you do not need this installed.
-    dependencies:
-      lz-string: 1.5.0
-    dev: true
-
   /@types/mdast@3.0.15:
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
     dependencies:
@@ -1220,36 +1203,6 @@ packages:
     dependencies:
       '@typescript-eslint/types': 6.15.0
       eslint-visitor-keys: 3.4.3
-    dev: true
-
-  /@typescript/ata@0.9.4(typescript@5.3.3):
-    resolution: {integrity: sha512-PaJ16WouPV/SaA+c0tnOKIqYq24+m93ipl/e0Dkxuianer+ibc5b0/6ZgfCFF8J7QEp57dySMSP9nWOFaCfJnw==}
-    peerDependencies:
-      typescript: ^4.4.4
-    dependencies:
-      typescript: 5.3.3
-    dev: true
-
-  /@typescript/twoslash@3.2.4(typescript@5.3.3):
-    resolution: {integrity: sha512-/TCIOuPQaKltzUUT1qJo6mplYwjbAxkaSFvkeZD3FeFt3Ovt+HJi8xisu8rcLyDRmM3VJ0+jAx+AAICwn4Zlhw==}
-    peerDependencies:
-      typescript: '*'
-    dependencies:
-      '@types/lz-string': 1.5.0
-      '@typescript/vfs': 1.5.0
-      debug: 4.3.4
-      lz-string: 1.5.0
-      typescript: 5.3.3
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /@typescript/vfs@1.5.0:
-    resolution: {integrity: sha512-AJS307bPgbsZZ9ggCT3wwpg3VbTKMFNHfaY/uF0ahSkYYrPF2dSSKDNIDIQAHm9qJqbLvCsSJH7yN4Vs/CsMMg==}
-    dependencies:
-      debug: 4.3.4
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@ungap/structured-clone@1.2.0:
@@ -3333,11 +3286,6 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lz-string@1.5.0:
-    resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
-    hasBin: true
-    dev: true
-
   /magic-string@0.30.5:
     resolution: {integrity: sha512-7xlpfBaQaP/T6Vh8MO/EqXSW5En6INHEvEXQiuff7Gku0PWjU3uf6w/j9o7O+SpB5fOAkrI5HeoNgwjEO0pFsA==}
     engines: {node: '>=12'}
@@ -3497,10 +3445,6 @@ packages:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
-    dev: true
-
-  /napi-wasm@1.1.0:
-    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
     dev: true
 
   /natural-compare-lite@1.4.0:
@@ -4274,26 +4218,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /shikiji-core@0.9.17:
-    resolution: {integrity: sha512-r1FWTXk6SO2aYqfWgcsJ11MuVQ1ymPSdXzJjK7q8EXuyqu8yc2N5qrQy5+BL6gTVOaF4yLjbxFjF+KTRM1Sp8Q==}
-    dev: true
-
-  /shikiji-twoslash@0.9.17(typescript@5.3.3):
-    resolution: {integrity: sha512-cBi0tYTX6RaGMNy1ed0dAX54BvVwpVX5XDNlNshPIKfMCGb8emjKwU4w3EANU1JE4YCexubSBvAKdF3WC6z9lQ==}
-    dependencies:
-      '@typescript/twoslash': 3.2.4(typescript@5.3.3)
-      shikiji-core: 0.9.17
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-    dev: true
-
-  /shikiji@0.9.17:
-    resolution: {integrity: sha512-0z/1NfkhBkm3ijrfFeHg3G9yDNuHhXdAGbQm7tRxj4WQ5z2y0XDbnagFyKyuV2ebCTS1Mwy1I3n0Fzcc/4xdmw==}
-    dependencies:
-      shikiji-core: 0.9.17
-    dev: true
-
   /siginfo@2.0.0:
     resolution: {integrity: sha512-ybx0WO1/8bSBLEWXZvEd7gMW3Sn3JFlW3TvX1nREbDLRNQNaeNN8WK0meBwPdAaOI7TtRRRJn/Es1zhrrCHu7g==}
     dev: true
@@ -4612,23 +4536,6 @@ packages:
       typescript: '>=4.2.0'
     dependencies:
       typescript: 5.3.3
-    dev: true
-
-  /twoslash-cdn@0.0.2:
-    resolution: {integrity: sha512-2dbt0tXS24tfqr5KSvtfABPA8RbS7i2ygK3zZf1DTeSmznDj1w5V/AxGSZU69sLalcgg/ubxes0/QbB00ViCdw==}
-    peerDependencies:
-      unstorage: ^1.10.1
-    peerDependenciesMeta:
-      unstorage:
-        optional: true
-    dependencies:
-      '@typescript/ata': 0.9.4(typescript@5.3.3)
-      '@typescript/twoslash': 3.2.4(typescript@5.3.3)
-      '@typescript/vfs': 1.5.0
-      lz-string: 1.5.0
-      typescript: 5.3.3
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /type-check@0.4.0:

@@ -14,7 +14,7 @@
 
     /* Bundler mode */
     "moduleResolution": "Bundler",
-    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
