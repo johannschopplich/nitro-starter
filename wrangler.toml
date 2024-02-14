@@ -1,7 +1,0 @@
-name = "nitro-starter"
-main = "./.output/server/index.mjs"
-workers_dev = true
-compatibility_date = "2023-05-19"
-
-[site]
-bucket = ".output/public"
