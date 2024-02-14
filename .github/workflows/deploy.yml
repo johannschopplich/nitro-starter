@@ -13,20 +13,18 @@ jobs:
       - run: corepack enable
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
 
-      # - run: cp .env.example .env
-
       - name: Install
-        run: pnpm i
+        run: pnpm install
 
       - name: Build
         run: pnpm run build
         env:
-          NITRO_PRESET: cloudflare
+          NITRO_PRESET: cloudflare_pages
 
       - name: Deploy to Cloudflare
-        run: npx wrangler deploy
+        run: npx wrangler pages deploy dist/ --project-name=nitro-starter
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
