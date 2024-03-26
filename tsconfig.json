@@ -10,15 +10,15 @@
       "~/*": ["./*"],
       "#imports": ["./.nitro/types/nitro-imports"],
       "#internal/nitro": ["./node_modules/nitropack/dist/runtime/index"],
-      "#internal/nitro/*": ["./node_modules/nitropack/dist/runtime/*"],
-      "#nitro": ["./node_modules/nitropack/dist/runtime/index"]
+      "#internal/nitro/*": ["./node_modules/nitropack/dist/runtime/*"]
     },
     "resolveJsonModule": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
     "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": ["./.nitro/types/nitro.d.ts", "**/*.ts"]
+  "include": ["./.nitro/types/nitro.d.ts", "**/*"]
 }
