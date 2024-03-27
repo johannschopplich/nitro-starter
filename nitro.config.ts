@@ -17,14 +17,4 @@ export default defineNitroConfig({
       redirect: { to: '/other', statusCode: 308 },
     },
   },
-
-  typescript: {
-    tsConfig: {
-      compilerOptions: {
-        strict: true,
-        noEmit: true,
-        moduleResolution: 'Bundler',
-      },
-    },
-  },
 })
