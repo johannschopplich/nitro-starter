@@ -1,7 +1,10 @@
-import { z } from 'zod'
+import { minLength, objectAsync, string } from 'valibot'
 
 export default defineEventHandler(async (event) => {
-  return await useValidatedQuery(event, {
-    user: z.string().min(1),
-  })
+  return await useValidatedQuery(
+    event,
+    objectAsync({
+      user: string([minLength(1)]),
+    }),
+  )
 })

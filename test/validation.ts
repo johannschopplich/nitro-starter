@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { callHandler } from './utils'
 
-describe('validate requests using zod schemas', () => {
+describe('validate requests using valibot schemas', () => {
   describe('validate query', () => {
     it('returns 200 if query matches validation schema', async () => {
       const { data, status } = await callHandler(

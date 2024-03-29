@@ -1,8 +1,11 @@
-import { z } from 'zod'
+import { boolean, objectAsync, optional, string } from 'valibot'
 
 export default defineEventHandler(async (event) => {
-  return await useValidatedBody(event, {
-    optional: z.string().optional(),
-    required: z.boolean(),
-  })
+  return await useValidatedBody(
+    event,
+    objectAsync({
+      optional: optional(string()),
+      required: boolean(),
+    }),
+  )
 })
