@@ -2,8 +2,8 @@ import { parseAsync } from 'valibot'
 import type { BaseSchemaAsync, Output } from 'valibot'
 import type { H3Event } from 'h3'
 
-const DEFAULT_ERROR_MESSAGE = 'Bad Request'
 const DEFAULT_ERROR_STATUS = 400
+const DEFAULT_ERROR_MESSAGE = 'Bad Request'
 
 function createBadRequest(error: any) {
   return createError({
