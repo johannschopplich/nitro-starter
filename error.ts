@@ -3,6 +3,7 @@
 import type { NitroErrorHandler } from 'nitropack'
 import { normalizeError } from '#internal/nitro/utils'
 
+// eslint-disable-next-line node/prefer-global/process
 const isDev = process.env.NODE_ENV === 'development'
 
 export default defineNitroErrorHandler(((error, event) => {

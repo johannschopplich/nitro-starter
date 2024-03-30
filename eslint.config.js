@@ -5,9 +5,9 @@ export default await antfu(
     stylistic: false,
   },
   {
+    files: ['**/*.tsx'],
     rules: {
-      'node/prefer-global/buffer': 'off',
-      'node/prefer-global/process': 'off',
+      'unused-imports/no-unused-imports': 'off',
     },
   },
 )
