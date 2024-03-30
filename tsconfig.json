@@ -13,6 +13,7 @@
       "#internal/nitro/*": ["./node_modules/nitropack/dist/runtime/*"]
     },
     "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,

@@ -14,6 +14,9 @@ devDependencies:
   lint-staged:
     specifier: ^15.2.2
     version: 15.2.2
+  nano-jsx:
+    specifier: ^0.1.0
+    version: 0.1.0
   nitropack:
     specifier: ^2.9.5
     version: 2.9.5
@@ -3767,6 +3770,11 @@ packages:
 
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
+    dev: true
+
+  /nano-jsx@0.1.0:
+    resolution: {integrity: sha512-S4qJM9ayruMdDnn3hiHNK6kq0ZvCaNrDL3RD5jc4AVhmsW1Ufk3xE64Q6xrjAzq1Gff+6VZ5+Au8For4FT/6LA==}
+    engines: {node: '>=16'}
     dev: true
 
   /nanoid@3.3.7:

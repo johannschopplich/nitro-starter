@@ -55,3 +55,7 @@ export default defineEventHandler((event) => {
 function waitFor(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
+
+function html(template: Parameters<typeof String.raw>[0]) {
+  return String.raw(template)
+}
