@@ -1,7 +1,5 @@
 # Nitro Starter
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/johannschopplich/nitro-starter)
-
 Starter kit for [⚗️ Nitro](https://nitro.unjs.io) – a powerful tool chain and a runtime framework from the [UnJS](https://github.com/unjs) ecosystem to build and deploy any JavaScript server, anywhere.
 
 It is highly recommended reading the [Nitro documentation](https://nitro.unjs.io) when working with this template.
@@ -9,7 +7,8 @@ It is highly recommended reading the [Nitro documentation](https://nitro.unjs.io
 ## Key Features
 
 - 🎒 [Demo routes](./routes/api/) and [route rule examples](./nitro.config.ts)
-- ✅ Full test coverage powered by [Vitest](https://vitest.dev/)
+- 🥖 [Nano JSX](https://nanojsx.io) SSR routes
+- ✅ Full test coverage powered by [Vitest](https://vitest.dev)
 - 🦺 ESLint & Prettier defaults
 
 ## Usage
