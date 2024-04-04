@@ -1,9 +1,8 @@
 import { fileURLToPath } from 'node:url'
 import { resolve } from 'pathe'
 import { joinURL } from 'ufo'
-import destr from 'destr'
 import { listen } from 'listhen'
-import { fetch } from 'ofetch'
+import { ofetch } from 'ofetch'
 import {
   build,
   copyPublicAssets,
@@ -13,6 +12,7 @@ import {
   prerender,
 } from 'nitropack'
 import type { Listener } from 'listhen'
+import type { FetchOptions, ResponseType } from 'ofetch'
 import type { Nitro } from 'nitropack'
 
 export interface Context {
@@ -88,22 +88,27 @@ export async function startServer(ctx: Context) {
   }
 }
 
-export async function callHandler(url: string, init?: RequestInit) {
+export async function $fetch<T = any, R extends ResponseType = 'json'>(
+  url: string,
+  options?: FetchOptions<R>,
+) {
   const { inject } = await import('vitest')
   const serverUrl = inject('nitroServerUrl')
-  const result = await fetch(joinURL(serverUrl, url), {
-    ...init,
+
+  const response = await ofetch.raw<T, R>(joinURL(serverUrl, url), {
+    ...options,
+    ignoreResponseError: true,
     redirect: 'manual',
     headers: {
       // Enforce JSON response when routes fail
       accept: 'application/json',
-      ...init?.headers,
+      ...options?.headers,
     },
   })
 
   return {
-    data: destr(await result.text()),
-    status: result.status,
-    headers: Object.fromEntries(result.headers.entries()),
+    body: response._data as T,
+    status: response.status,
+    headers: Object.fromEntries(response.headers.entries()),
   }
 }
