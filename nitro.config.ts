@@ -3,8 +3,11 @@ import nitroPkg from './node_modules/nitropack/package.json'
 
 export default defineNitroConfig({
   runtimeConfig: {
-    // Replace with allowed URLs in production
-    allowedOrigins: ['*'],
+    cors: {
+      // Replace with allowed production URLs
+      origins: ['*'],
+    },
+
     nitroVersion: nitroPkg.version,
   },
 

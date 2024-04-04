@@ -1,4 +1,16 @@
 export default defineEventHandler((event) => {
-  const { allowedOrigins: origin = [] } = useRuntimeConfig()
-  handleCors(event, { origin })
+  const {
+    cors: { origins = [] },
+  } = useRuntimeConfig()
+  const origin = getRequestHeader(event, 'origin')
+
+  handleCors(event, {
+    origin: [
+      ...origins,
+      // Allow requests from the development server
+      ...(import.meta.dev ? [origin] : []),
+    ],
+    methods: ['GET', 'POST', 'OPTIONS'],
+    maxAge: '86400',
+  })
 })
