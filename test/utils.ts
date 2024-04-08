@@ -102,7 +102,7 @@ export async function $fetch<T = any, R extends ResponseType = 'json'>(
     headers: {
       // Enforce JSON response when routes fail
       accept: 'application/json',
-      ...options?.headers,
+      ...headersToObject(options?.headers),
     },
   })
 
@@ -111,4 +111,8 @@ export async function $fetch<T = any, R extends ResponseType = 'json'>(
     status: response.status,
     headers: Object.fromEntries(response.headers.entries()),
   }
+}
+
+function headersToObject(headers?: HeadersInit) {
+  return Object.fromEntries(new Headers(headers).entries())
 }
