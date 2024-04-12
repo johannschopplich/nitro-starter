@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { $fetch } from 'nitro-test-utils'
+import { $fetch } from 'nitro-test-utils/e2e'
 
 // eslint-disable-next-line test/prefer-lowercase-title
 describe('API routes', () => {

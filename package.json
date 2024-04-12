@@ -2,7 +2,7 @@
   "name": "nitro-starter",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.15.5",
+  "packageManager": "pnpm@8.15.6",
   "scripts": {
     "dev": "nitro dev",
     "build": "nitro build",
@@ -16,17 +16,17 @@
     "prepare": "simple-git-hooks && nitro prepare"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.9.0",
+    "@antfu/eslint-config": "^2.13.3",
     "eslint": "^8.57.0",
     "lint-staged": "^15.2.2",
     "nano-jsx": "^0.1.0",
-    "nitro-test-utils": "^0.1.2",
-    "nitropack": "^2.9.5",
+    "nitro-test-utils": "^0.3.1",
+    "nitropack": "^2.9.6",
     "prettier": "^3.2.5",
     "simple-git-hooks": "^2.11.1",
-    "typescript": "^5.4.3",
+    "typescript": "^5.4.5",
     "valibot": "^0.30.0",
-    "vitest": "^1.4.0"
+    "vitest": "^1.5.0"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
