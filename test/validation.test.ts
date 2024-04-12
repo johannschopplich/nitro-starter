@@ -4,10 +4,10 @@ import { $fetch } from 'nitro-test-utils/e2e'
 describe('validate requests using valibot schemas', () => {
   describe('validate query', () => {
     it('returns 200 if query matches validation schema', async () => {
-      const { body, status } = await $fetch('/api/validate/query?user=nitro')
+      const { _data, status } = await $fetch('/api/validate/query?user=nitro')
 
       expect(status).toBe(200)
-      expect(body).toMatchInlineSnapshot(
+      expect(_data).toMatchInlineSnapshot(
         `
         {
           "user": "nitro",
@@ -17,10 +17,10 @@ describe('validate requests using valibot schemas', () => {
     })
 
     it('throws 400 if query does not match validation schema', async () => {
-      const { body, status } = await $fetch('/api/validate/query')
+      const { _data, status } = await $fetch('/api/validate/query')
 
       expect(status).toBe(400)
-      expect(body.message).toMatchInlineSnapshot(
+      expect(_data.message).toMatchInlineSnapshot(
         `"Invalid type: Expected string but received undefined"`,
       )
     })
@@ -28,7 +28,7 @@ describe('validate requests using valibot schemas', () => {
 
   describe('validate body', () => {
     it('returns 200 if body matches validation schema', async () => {
-      const { body, status } = await $fetch('/api/validate/body', {
+      const { _data, status } = await $fetch('/api/validate/body', {
         method: 'POST',
         body: { required: true },
         headers: {
@@ -37,7 +37,7 @@ describe('validate requests using valibot schemas', () => {
       })
 
       expect(status).toBe(200)
-      expect(body).toMatchInlineSnapshot(`
+      expect(_data).toMatchInlineSnapshot(`
         {
           "required": true,
         }
@@ -45,7 +45,7 @@ describe('validate requests using valibot schemas', () => {
     })
 
     it('throws 400 if body does not match validation schema', async () => {
-      const { body, status } = await $fetch('/api/validate/body', {
+      const { _data, status } = await $fetch('/api/validate/body', {
         method: 'POST',
         body: {},
         headers: {
@@ -54,7 +54,7 @@ describe('validate requests using valibot schemas', () => {
       })
 
       expect(status).toBe(400)
-      expect(body.message).toMatchInlineSnapshot(
+      expect(_data.message).toMatchInlineSnapshot(
         `"Invalid type: Expected boolean but received undefined"`,
       )
     })
