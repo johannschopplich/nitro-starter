@@ -18,8 +18,8 @@ devDependencies:
     specifier: ^0.1.0
     version: 0.1.0
   nitro-test-utils:
-    specifier: ^0.4.0
-    version: 0.4.0(nitropack@2.9.6)(vitest@1.5.0)
+    specifier: ^0.4.2
+    version: 0.4.2(nitropack@2.9.6)(vitest@1.5.0)
   nitropack:
     specifier: ^2.9.6
     version: 2.9.6
@@ -3720,12 +3720,13 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
-  /nitro-test-utils@0.4.0(nitropack@2.9.6)(vitest@1.5.0):
-    resolution: {integrity: sha512-OxOK0YRjhIthVAfB3wXwqF+J/W11ikLj5xtEOiagHORTf45Qv7KYo1GugyZ+ZjbenT5uaf1y0X9SNgOPn+ZnHg==}
+  /nitro-test-utils@0.4.2(nitropack@2.9.6)(vitest@1.5.0):
+    resolution: {integrity: sha512-g3ZATYOrvImog/aHbL9111j6Rxe+jr/fpxhVGtKBWcJJnwC0eVlUI+ixAnaNrQQ0J8R0IiK/iVpIV3UUN6P+fw==}
     peerDependencies:
       nitropack: ^2
       vitest: ^1
     dependencies:
+      defu: 6.1.4
       listhen: 1.7.2
       nitropack: 2.9.6
       ofetch: 1.3.4
