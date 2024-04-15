@@ -7,13 +7,11 @@ describe('validate requests using valibot schemas', () => {
       const { _data, status } = await $fetch('/api/validate/query?user=nitro')
 
       expect(status).toBe(200)
-      expect(_data).toMatchInlineSnapshot(
-        `
+      expect(_data).toMatchInlineSnapshot(`
         {
           "user": "nitro",
         }
-      `,
-      )
+      `)
     })
 
     it('throws 400 if query does not match validation schema', async () => {

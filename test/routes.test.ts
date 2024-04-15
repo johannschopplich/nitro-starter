@@ -4,12 +4,16 @@ import { $fetch } from 'nitro-test-utils/e2e'
 // eslint-disable-next-line test/prefer-lowercase-title
 describe('API routes', () => {
   it('returns JSON data', async () => {
-    const { _data } = await $fetch('/api/hello')
-    expect(_data).toMatchObject({ message: 'Hello API' })
+    const { _data } = await $fetch<Record<string, any>>('/api/hello')
+    expect(_data).toMatchInlineSnapshot(`
+      {
+        "message": "Hello API",
+      }
+    `)
   })
 
   it('returns wildcard data', async () => {
-    const { _data } = await $fetch('/api/wildcard/foo/bar/baz')
+    const { _data } = await $fetch<string>('/api/wildcard/foo/bar/baz')
     expect(_data).toBe('foo/bar/baz')
   })
 

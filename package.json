@@ -2,7 +2,7 @@
   "name": "nitro-starter",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.15.6",
+  "packageManager": "pnpm@8.15.7",
   "scripts": {
     "dev": "nitro dev",
     "build": "nitro build",
@@ -20,7 +20,7 @@
     "eslint": "^8.57.0",
     "lint-staged": "^15.2.2",
     "nano-jsx": "^0.1.0",
-    "nitro-test-utils": "^0.4.2",
+    "nitro-test-utils": "^0.4.3",
     "nitropack": "^2.9.6",
     "prettier": "^3.2.5",
     "simple-git-hooks": "^2.11.1",
