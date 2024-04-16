@@ -3,9 +3,6 @@
 import type { NitroErrorHandler } from 'nitropack'
 import { normalizeError } from '#internal/nitro/utils'
 
-// eslint-disable-next-line node/prefer-global/process
-const isDev = process.env.NODE_ENV === 'development'
-
 export default defineNitroErrorHandler(((error, event) => {
   const { stack, statusCode, statusMessage, message } = normalizeError(error)
   const url = event.path
@@ -37,7 +34,10 @@ export default defineNitroErrorHandler(((error, event) => {
       statusCode,
       statusMessage,
       message,
-      stack: isDev && statusCode !== 404 ? stack.map((i) => i.text) : undefined,
+      stack:
+        import.meta.dev && statusCode !== 404
+          ? stack.map((i) => i.text)
+          : undefined,
     }),
   )
 }) satisfies NitroErrorHandler)
