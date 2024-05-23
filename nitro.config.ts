@@ -2,6 +2,8 @@
 import nitroPkg from './node_modules/nitropack/package.json'
 
 export default defineNitroConfig({
+  srcDir: 'server',
+
   runtimeConfig: {
     cors: {
       // Replace with allowed production URLs
