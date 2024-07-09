@@ -1,5 +1,4 @@
-import { parseAsync } from 'valibot'
-import type { BaseIssue, BaseSchemaAsync, InferOutput } from 'valibot'
+import * as v from 'valibot'
 import type { H3Event } from 'h3'
 
 const DEFAULT_ERROR_STATUS = 400
@@ -15,11 +14,11 @@ function createValidationError(error: any) {
 }
 
 export async function useValidatedQuery<
-  T extends BaseSchemaAsync<unknown, unknown, BaseIssue<unknown>>,
->(event: H3Event, schema: T): Promise<InferOutput<T>> {
+  T extends v.BaseSchemaAsync<unknown, unknown, v.BaseIssue<unknown>>,
+>(event: H3Event, schema: T): Promise<v.InferOutput<T>> {
   try {
     const query = getQuery(event)
-    const parsed = await parseAsync<T>(schema, query)
+    const parsed = await v.parseAsync<T>(schema, query)
     return parsed
   } catch (error) {
     console.error(error)
@@ -28,11 +27,11 @@ export async function useValidatedQuery<
 }
 
 export async function useValidatedBody<
-  T extends BaseSchemaAsync<unknown, unknown, BaseIssue<unknown>>,
->(event: H3Event, schema: T): Promise<InferOutput<T>> {
+  T extends v.BaseSchemaAsync<unknown, unknown, v.BaseIssue<unknown>>,
+>(event: H3Event, schema: T): Promise<v.InferOutput<T>> {
   try {
     const body = await readBody(event)
-    const parsed = await parseAsync<T>(schema, body)
+    const parsed = await v.parseAsync<T>(schema, body)
     return parsed
   } catch (error) {
     console.error(error)

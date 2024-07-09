@@ -1,10 +1,10 @@
-import { minLength, objectAsync, pipe, string } from 'valibot'
+import * as v from 'valibot'
 
 export default defineEventHandler(async (event) => {
   return await useValidatedQuery(
     event,
-    objectAsync({
-      user: pipe(string(), minLength(1)),
+    v.objectAsync({
+      user: v.pipe(v.string(), v.minLength(1)),
     }),
   )
 })

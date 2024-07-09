@@ -1,11 +1,11 @@
-import { boolean, objectAsync, optional, string } from 'valibot'
+import * as v from 'valibot'
 
 export default defineEventHandler(async (event) => {
   return await useValidatedBody(
     event,
-    objectAsync({
-      optional: optional(string()),
-      required: boolean(),
+    v.objectAsync({
+      optional: v.optional(v.string()),
+      required: v.boolean(),
     }),
   )
 })
