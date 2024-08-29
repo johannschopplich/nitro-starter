@@ -18,8 +18,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       nitro-test-utils:
-        specifier: ^0.8.0
-        version: 0.8.0(nitropack@2.9.7)(vitest@2.0.5(@types/node@22.5.1)(terser@5.31.6))
+        specifier: ^0.8.2
+        version: 0.8.2(nitropack@2.9.7)(vitest@2.0.5(@types/node@22.5.1)(terser@5.31.6))
       nitropack:
         specifier: ^2.9.7
         version: 2.9.7
@@ -2158,8 +2158,8 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
-  nitro-test-utils@0.8.0:
-    resolution: {integrity: sha512-QYyuNvQoSoR+R/v8li6ZaIF2kGGYnfYvEUEHglTVdmImOw35KQ+CXPz4rtfE82d5hVMIWLIMJ/jp/ASyZaPVhQ==}
+  nitro-test-utils@0.8.2:
+    resolution: {integrity: sha512-A8iffxw0snEnhLGEXWY8O+M2ZpJVI0ocPQDdqRcyLSC53GyiZgbRqeImbDXicSzosVLLnvU8gLM6glovHro/mw==}
     peerDependencies:
       nitropack: ^2
       vitest: ^2
@@ -5136,7 +5136,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  nitro-test-utils@0.8.0(nitropack@2.9.7)(vitest@2.0.5(@types/node@22.5.1)(terser@5.31.6)):
+  nitro-test-utils@0.8.2(nitropack@2.9.7)(vitest@2.0.5(@types/node@22.5.1)(terser@5.31.6)):
     dependencies:
       dotenv: 16.4.5
       listhen: 1.7.2
