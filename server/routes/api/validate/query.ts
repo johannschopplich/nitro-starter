@@ -1,9 +1,9 @@
 import * as v from 'valibot'
 
 export default defineEventHandler(async (event) => {
-  return await useValidatedQuery(
+  return useValidatedQuery(
     event,
-    v.objectAsync({
+    v.object({
       user: v.pipe(v.string(), v.minLength(1)),
     }),
   )

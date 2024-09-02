@@ -13,12 +13,12 @@ function createValidationError(error: any) {
   })
 }
 
-export async function useValidatedQuery<
-  T extends v.BaseSchemaAsync<unknown, unknown, v.BaseIssue<unknown>>,
->(event: H3Event, schema: T): Promise<v.InferOutput<T>> {
+export function useValidatedQuery<
+  T extends v.BaseSchema<unknown, unknown, v.BaseIssue<unknown>>,
+>(event: H3Event, schema: T): v.InferOutput<T> {
   try {
     const query = getQuery(event)
-    const parsed = await v.parseAsync<T>(schema, query)
+    const parsed = v.parse<T>(schema, query)
     return parsed
   } catch (error) {
     console.error(error)
@@ -27,11 +27,11 @@ export async function useValidatedQuery<
 }
 
 export async function useValidatedBody<
-  T extends v.BaseSchemaAsync<unknown, unknown, v.BaseIssue<unknown>>,
+  T extends v.BaseSchema<unknown, unknown, v.BaseIssue<unknown>>,
 >(event: H3Event, schema: T): Promise<v.InferOutput<T>> {
   try {
     const body = await readBody(event)
-    const parsed = await v.parseAsync<T>(schema, body)
+    const parsed = v.parse<T>(schema, body)
     return parsed
   } catch (error) {
     console.error(error)
