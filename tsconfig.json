@@ -8,9 +8,7 @@
     "moduleResolution": "Bundler",
     "paths": {
       "~/*": ["./server/*"],
-      "#imports": ["./.nitro/types/nitro-imports"],
-      "#internal/nitro": ["./node_modules/nitropack/dist/runtime/index"],
-      "#internal/nitro/*": ["./node_modules/nitropack/dist/runtime/*"]
+      "#imports": ["./.nitro/types/nitro-imports"]
     },
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
