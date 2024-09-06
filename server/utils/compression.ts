@@ -1,7 +1,7 @@
 import { promisify } from 'node:util'
 import zlib from 'node:zlib'
-import type { Buffer } from 'node:buffer'
 import type { H3Event } from 'h3'
+import type { Buffer } from 'node:buffer'
 
 export async function maybeCompressedSend(event: H3Event, response: Buffer) {
   const encodingMethod = getAnyCompression(event)

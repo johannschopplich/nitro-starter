@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest'
 import { $fetch } from 'nitro-test-utils/e2e'
+import { describe, expect, it } from 'vitest'
 
 describe('validate requests using valibot schemas', () => {
   describe('validate query', () => {

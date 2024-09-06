@@ -1,7 +1,7 @@
 // Custom error handler for production environment
 // See: https://github.com/unjs/nitro/blob/20078be2430bc4615119779a07f4b73e7323df60/src/runtime/error.ts
-import type { NitroErrorHandler } from 'nitropack'
 import { normalizeError } from 'nitropack/runtime/utils'
+import type { NitroErrorHandler } from 'nitropack'
 
 export default defineNitroErrorHandler(((error, event) => {
   const { stack, statusCode, statusMessage, message } = normalizeError(error)

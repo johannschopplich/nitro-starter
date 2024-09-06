@@ -15,14 +15,14 @@
     "prepare": "nitro prepare"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.0.0",
+    "@antfu/eslint-config": "^3.3.2",
     "eslint": "^9.9.1",
     "nano-jsx": "^0.1.0",
     "nitro-test-utils": "^0.8.2",
     "nitropack": "^2.9.7",
     "prettier": "^3.3.3",
     "typescript": "^5.5.4",
-    "valibot": "^0.39.0",
+    "valibot": "^0.41.0",
     "vitest": "^2.0.5"
   }
 }
