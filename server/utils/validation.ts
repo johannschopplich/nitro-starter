@@ -1,5 +1,5 @@
-import * as v from 'valibot'
 import type { H3Event } from 'h3'
+import * as v from 'valibot'
 
 const DEFAULT_ERROR_STATUS = 400
 const DEFAULT_ERROR_MESSAGE = 'Validation Error'

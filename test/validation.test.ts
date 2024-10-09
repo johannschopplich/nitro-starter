@@ -1,10 +1,12 @@
-import { $fetch } from 'nitro-test-utils/e2e'
+import { $fetchRaw } from 'nitro-test-utils/e2e'
 import { describe, expect, it } from 'vitest'
 
 describe('validate requests using valibot schemas', () => {
   describe('validate query', () => {
     it('returns 200 if query matches validation schema', async () => {
-      const { _data, status } = await $fetch('/api/validate/query?user=nitro')
+      const { _data, status } = await $fetchRaw(
+        '/api/validate/query?user=nitro',
+      )
 
       expect(status).toBe(200)
       expect(_data).toMatchInlineSnapshot(`
@@ -15,7 +17,7 @@ describe('validate requests using valibot schemas', () => {
     })
 
     it('throws 400 if query does not match validation schema', async () => {
-      const { _data, status } = await $fetch('/api/validate/query')
+      const { _data, status } = await $fetchRaw('/api/validate/query')
 
       expect(status).toBe(400)
       expect(_data.message).toMatchInlineSnapshot(
@@ -26,7 +28,7 @@ describe('validate requests using valibot schemas', () => {
 
   describe('validate body', () => {
     it('returns 200 if body matches validation schema', async () => {
-      const { _data, status } = await $fetch('/api/validate/body', {
+      const { _data, status } = await $fetchRaw('/api/validate/body', {
         method: 'POST',
         body: { required: true },
         headers: {
@@ -43,7 +45,7 @@ describe('validate requests using valibot schemas', () => {
     })
 
     it('throws 400 if body does not match validation schema', async () => {
-      const { _data, status } = await $fetch('/api/validate/body', {
+      const { _data, status } = await $fetchRaw('/api/validate/body', {
         method: 'POST',
         body: {},
         headers: {

@@ -1,5 +1,5 @@
-import { h } from 'nano-jsx'
 import type { Component } from 'nano-jsx'
+import { h } from 'nano-jsx'
 
 export const Base = ({ children }: { children: Component[] }) => {
   const scriptContent = `
