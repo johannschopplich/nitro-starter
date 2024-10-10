@@ -10,7 +10,7 @@ export default defineEventHandler(() => {
     '/api/error',
   ]
 
-  return renderSSR(() => (
+  return `<!doctype html>${renderSSR(() => (
     <Base>
       <header>
         <h1>🐣 Nitro Starter</h1>
@@ -45,5 +45,5 @@ export default defineEventHandler(() => {
         </footer>
       </main>
     </Base>
-  ))
+  ))}`
 })
