@@ -13,9 +13,6 @@ export default defineNitroConfig({
     nitroVersion: nitroPkg.version,
   },
 
-  // Optional custom error handler
-  errorHandler: '~/error',
-
   routeRules: {
     '/rules/redirect': { redirect: '/base' },
     '/rules/redirect/obj': {
