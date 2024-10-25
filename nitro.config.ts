@@ -13,10 +13,23 @@ export default defineNitroConfig({
     nitroVersion: nitroPkg.version,
   },
 
+  errorHandler: '~/error',
+
   routeRules: {
     '/rules/redirect': { redirect: '/base' },
     '/rules/redirect/obj': {
       redirect: { to: '/other', statusCode: 308 },
+    },
+  },
+
+  experimental: {
+    // @ts-expect-error: Nitro types are not up to date
+    openAPI: {
+      meta: {
+        title: 'Kirby.tools License API',
+        description: 'API for managing Kirby.tools licenses',
+        version: '1.0.0',
+      },
     },
   },
 })
