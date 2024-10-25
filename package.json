@@ -2,7 +2,7 @@
   "name": "nitro-starter",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.12.1",
+  "packageManager": "pnpm@9.12.2",
   "scripts": {
     "dev": "nitro dev",
     "build": "nitro build",
@@ -15,14 +15,14 @@
     "prepare": "nitro prepare"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.7.3",
-    "eslint": "^9.12.0",
+    "@antfu/eslint-config": "^3.8.0",
+    "eslint": "^9.13.0",
     "nano-jsx": "^0.1.0",
     "nitro-test-utils": "^0.9.0",
     "nitropack": "^2.9.7",
     "prettier": "^3.3.3",
-    "typescript": "^5.5.4",
-    "valibot": "^1.0.0-beta.0",
-    "vitest": "^2.1.2"
+    "typescript": "^5.6.3",
+    "valibot": "^1.0.0-beta.1",
+    "vitest": "^2.1.3"
   }
 }
