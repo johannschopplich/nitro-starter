@@ -1,0 +1,111 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Nitro Starter API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://nitro-starter.byjohann.dev",
+      "description": "Production Server",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/{slug}": {
+      "get": {
+        "tags": ["App Routes"],
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/error": {
+      "get": {
+        "tags": ["API Routes"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/hello": {
+      "get": {
+        "tags": ["API Routes"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/validate/body": {
+      "get": {
+        "tags": ["API Routes"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/validate/query": {
+      "get": {
+        "tags": ["API Routes"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/wildcard/{rest}": {
+      "get": {
+        "tags": ["API Routes"],
+        "parameters": [
+          {
+            "name": "rest",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/stream": {
+      "get": {
+        "tags": ["App Routes"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

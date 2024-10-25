@@ -23,11 +23,10 @@ export default defineNitroConfig({
   },
 
   experimental: {
-    // @ts-expect-error: Nitro types are not up to date
+    // @ts-expect-error: Wait for upcoming Nitro release
     openAPI: {
       meta: {
-        title: 'Kirby.tools License API',
-        description: 'API for managing Kirby.tools licenses',
+        title: 'Nitro Starter API',
         version: '1.0.0',
       },
     },
