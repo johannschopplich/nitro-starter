@@ -12,7 +12,7 @@ describe('API routes', () => {
     `)
   })
 
-  it('returns wildcard data', async () => {
+  it('returns wildcard route parameters', async () => {
     const { _data } = await $fetchRaw<string>('/api/wildcard/foo/bar/baz')
     expect(_data).toBe('foo/bar/baz')
   })

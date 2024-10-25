@@ -7,6 +7,7 @@ export default defineEventHandler(() => {
     '/api/hello',
     '/api/validate/body',
     '/api/validate/query?user=nitro',
+    '/api/wildcard/foo/bar',
     '/api/error',
   ]
 
@@ -24,26 +25,15 @@ export default defineEventHandler(() => {
             </li>
           ))}
         </ul>
-        <br />
-        <h2>Performance</h2>
-        <table class="table-auto" id="perf"></table>
-        <hr />
-        <footer>
-          Generated at {new Date().toUTCString()} with{' '}
-          <a href="https://nitro.unjs.io/" target="_blank" rel="noopener">
-            Nitro
-          </a>{' '}
-          {useRuntimeConfig().nitroVersion} (
-          <a
-            href="https://github.com/unjs/nitro"
-            target="_blank"
-            rel="noopener"
-          >
-            source code
-          </a>
-          )
-        </footer>
       </main>
+      <hr />
+      <footer>
+        Generated at {new Date().toUTCString()} with{' '}
+        <a href="https://nitro.unjs.io" target="_blank" rel="noopener">
+          Nitro
+        </a>{' '}
+        {useRuntimeConfig().nitroVersion}
+      </footer>
     </Base>
   ))}`
 })
