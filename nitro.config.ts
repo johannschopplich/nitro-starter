@@ -23,11 +23,18 @@ export default defineNitroConfig({
     },
   },
 
+  experimental: {
+    openAPI: true,
+  },
+
   openAPI: {
-    production: 'prerender',
+    production: 'runtime',
     meta: {
       title: 'Nitro Starter API',
       version: '1.0.0',
+    },
+    ui: {
+      scalar: false,
     },
   },
 })
