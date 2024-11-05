@@ -2,7 +2,7 @@ export default defineEventHandler((event) => {
   const {
     cors: { origins = [] },
   } = useRuntimeConfig(event)
-  const origin = getRequestHeader(event, 'origin')
+  const origin = getRequestHeader(event, 'origin')!
 
   handleCors(event, {
     origin: [

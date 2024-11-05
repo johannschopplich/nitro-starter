@@ -3,6 +3,7 @@ import nitroPkg from './node_modules/nitropack/package.json'
 
 export default defineNitroConfig({
   srcDir: 'server',
+  compatibilityDate: '2024-09-19',
 
   runtimeConfig: {
     cors: {
@@ -22,13 +23,11 @@ export default defineNitroConfig({
     },
   },
 
-  experimental: {
-    // @ts-expect-error: Wait for upcoming Nitro release
-    openAPI: {
-      meta: {
-        title: 'Nitro Starter API',
-        version: '1.0.0',
-      },
+  openAPI: {
+    production: 'prerender',
+    meta: {
+      title: 'Nitro Starter API',
+      version: '1.0.0',
     },
   },
 })
