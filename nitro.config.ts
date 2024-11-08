@@ -2,8 +2,8 @@
 import nitroPkg from './node_modules/nitropack/package.json'
 
 export default defineNitroConfig({
-  srcDir: 'server',
   compatibilityDate: '2024-09-19',
+  srcDir: 'server',
 
   runtimeConfig: {
     cors: {
