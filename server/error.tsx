@@ -1,7 +1,6 @@
 // Custom error handler for production environment
 // See: https://github.com/unjs/nitro/blob/a399e189576d4c18d7f837bd454e0503e1f53980/src/runtime/internal/error.ts
 import type { H3Event } from 'h3'
-import type { NitroErrorHandler } from 'nitropack'
 import { Fragment, h, renderSSR } from 'nano-jsx'
 import { isJsonRequest, normalizeError } from 'nitropack/runtime/utils'
 import { Base } from './components/index.tsx'
@@ -14,7 +13,7 @@ interface ParsedError {
   stack?: string[]
 }
 
-export default defineNitroErrorHandler(((error, event) => {
+export default defineNitroErrorHandler((error, event) => {
   const { stack, statusCode, statusMessage, message } = normalizeError(error)
 
   const showDetails = import.meta.dev && statusCode !== 404
@@ -52,7 +51,7 @@ export default defineNitroErrorHandler(((error, event) => {
 
   setResponseHeader(event, 'Content-Type', 'text/html')
   return send(event, renderHTMLError(event, errorObject))
-}) satisfies NitroErrorHandler)
+})
 
 function renderHTMLError(event: H3Event, error: ParsedError) {
   const statusCode = error.statusCode || 500
